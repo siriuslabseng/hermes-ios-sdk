@@ -11,13 +11,18 @@ import Foundation
 class ChangelogViewModel {
     
     func fetchStuff(slug_id : String, public_key: String, completion: @escaping (Result<ChangelogResult, Error>) -> Void){
-        let url = URL(string:  "\(Constants.base_url)/changelog/slug/\(slug_id)")!
+        let url = URL(string:  "\(Constants.base_url)/changelog/slug/\(slug_id)/")!
         
         var request = URLRequest(url: url)
+        request.httpMethod = "GET"
         request.allHTTPHeaderFields = [
             "x-hermes-public-key": "\(public_key)",
+            "origin": "*",
             "Content-Type": "application/json"
         ]
+        
+        print(request)
+        print(request.allHTTPHeaderFields)
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
@@ -32,6 +37,8 @@ class ChangelogViewModel {
             
             do {
                 // Parse the JSON data
+                print(data)
+                print(response)
                 let changelogResult = try JSONDecoder().decode(ChangelogResult.self, from: data)
                 completion(.success(changelogResult))
             } catch {
