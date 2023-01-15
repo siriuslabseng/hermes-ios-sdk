@@ -21,9 +21,6 @@ class ChangelogViewModel {
             "Content-Type": "application/json"
         ]
         
-        print(request)
-        print(request.allHTTPHeaderFields)
-        
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
                 completion(.failure(error))
@@ -37,9 +34,8 @@ class ChangelogViewModel {
             
             do {
                 // Parse the JSON data
-                print(data)
-                print(response)
                 let changelogResult = try JSONDecoder().decode(ChangelogResult.self, from: data)
+                //print(changelogResult)
                 completion(.success(changelogResult))
             } catch {
                 completion(.failure(error))

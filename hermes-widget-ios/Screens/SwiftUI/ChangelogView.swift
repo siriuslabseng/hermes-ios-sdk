@@ -11,17 +11,17 @@ struct ChangelogView: View {
     
     @ObservedObject var viewObserver : ViewObserver
     @Environment(\.presentationMode) var presentationMode
-    var fontRegular = "TTInterfaces-Regular.ttf"
-    var fontMedium = "TTInterfaces-Medium.ttf"
-    var fontBold = "TTInterfaces-Bold.ttf"
-    var fontBlack = "TTInterfaces-Black.ttf"
+    //    var fontRegular = "TTInterfaces-Regular"
+    //    var fontMedium = "TTInterfaces-Medium"
+    //    var fontBold = "TTInterfaces-Bold"
+    //    var fontBlack = "TTInterfaces-Black"
     
     
     var body: some View {
-        VStack{
+        VStack(spacing: 0){
             VStack{
                 HStack(spacing: 0){
-                    Text("Changelog").font(.custom(fontBold, size: 26))
+                    Text("Changelog").font(.custom(FontsManager.fontBlack, size: 26))
                     Spacer()
                     Button(action: {presentationMode.wrappedValue.dismiss()}){
                         Image(systemName: "multiply")
@@ -30,26 +30,46 @@ struct ChangelogView: View {
                     }
                 }
                 Spacer().frame(height: 2)
-                HStack{
-                    Text("Powered by Hermes").font(.custom(fontRegular, size: 14))
+                HStack(spacing: 0){
+                    Text("Powered by ").font(.custom(FontsManager.fontRegular, size: 12))
+                    Image("logo").resizable().scaledToFit().frame(width: 20).padding(.top, 3)
+                    Text(" Hermes").font(.custom(FontsManager.fontRegular, size: 12))
                     Spacer()
                 }
-            }.padding([.horizontal], 18).padding([.top], 18)
+            }.padding([.horizontal], 18).padding([.top], 18).padding([.bottom], 16).background(Color.white.ignoresSafeArea())
             ScrollView(showsIndicators: false){
+                Spacer().frame(height: 20)
                 LazyVStack(alignment: .center, spacing: 14){
                     ForEach(viewObserver.changelogResult.data.changelogs, id: \.id) { changelog in
                         VStack(alignment: .leading){
-                            Text(changelog.title).font(.system(size: 24, weight: .bold))
+                            Text(changelog.title).font(.custom(FontsManager.fontBold, size: 22))
                             Spacer().frame(height: 5)
-                            Text(changelog.createdAt).font(.system(size: 10, weight: .regular))
+                            Text(getStringFromDate(thisDate: changelog.createdAt)).font(.custom(FontsManager.fontRegular, size: 10)).opacity(0.8)
                             Spacer().frame(height: 10)
-                            Text(changelog.content).font(.system(size: 14, weight: .regular))
-                        }.padding(.vertical, 12).padding(.horizontal, 14).background(Color.white).cornerRadius(6)
+                            Text(changelog.content).font(.custom(FontsManager.fontRegular, size: 16))
+                            HStack{
+                                
+                            }.frame(width: 50, height: 1).background(Color.gray)
+                        }
+                        //.padding(.vertical, 12).padding(.horizontal, 14).background(Color.white).cornerRadius(6)
                     }
-                }.padding([.horizontal], 16)
+                }.padding([.horizontal], 18)
             }
             Spacer()
         }.background(Color(.systemGray5).ignoresSafeArea())
+    }
+    
+    func getStringFromDate(thisDate: String) -> String {
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        
+        let dateFormatterPrint = DateFormatter()
+        let date: Date? = dateFormatterGet.date(from: thisDate)
+        
+        dateFormatterPrint.timeZone = TimeZone.current
+        dateFormatterPrint.locale = Locale(identifier: "en_US_POSIX")
+        dateFormatterPrint.dateFormat = "EEE, dd MMM YY"
+        return dateFormatterPrint.string(from: date ?? Date())
     }
 }
 

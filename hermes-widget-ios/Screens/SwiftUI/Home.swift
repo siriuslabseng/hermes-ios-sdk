@@ -21,9 +21,10 @@ struct Home: View {
         ZStack(alignment: .bottom){
             VStack(spacing: 30){
                 VStack(alignment: .leading){
-                    Text("Widget Slug")
+                    Text("Widget Slug").font(.custom(FontsManager.fontRegular, size: 16))
                     TextField("Type or paste slud_id here", text: $slug_id)
                         .keyboardType(.default)
+                        .font(.custom(FontsManager.fontRegular, size: 16))
                     //.textInputAutocapitalization(.sentences)
                         .padding(.vertical, 15)
                         .padding(.horizontal, 12)
@@ -33,9 +34,10 @@ struct Home: View {
                     
                 }
                 VStack(alignment: .leading){
-                    Text("Your Hermes Public Key")
+                    Text("Your Hermes Public Key").font(.custom(FontsManager.fontRegular, size: 16))
                     TextField("Type or paste public key here", text: $public_key)
                         .keyboardType(.default)
+                        .font(.custom(FontsManager.fontRegular, size: 16))
                     //.textInputAutocapitalization(.sentences)
                         .padding(.vertical, 15)
                     
@@ -47,8 +49,8 @@ struct Home: View {
                 Button(action: {
                     fetchChangelog()
                 }){
-                    Text("Show Changelog").foregroundColor(Color.white)
-                }.padding(10).background(Color(.systemBlue)).cornerRadius(8).padding(.top, 10)
+                    Text("Show Changelog").foregroundColor(Color.white).font(.custom(FontsManager.fontBold, size: 16))
+                }.padding(.vertical, 10).padding(.horizontal, 16).background(Color(.systemBlue)).cornerRadius(6).padding(.top, 10)
             }
             .padding(.horizontal, 20).frame(minHeight: 0, maxHeight: .infinity)
         }.overlay(loading ?  VStack{
