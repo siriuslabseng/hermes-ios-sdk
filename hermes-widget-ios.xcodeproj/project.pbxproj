@@ -19,6 +19,11 @@
 		EFCECF3A2974980E00B75102 /* ChangelogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCECF392974980E00B75102 /* ChangelogViewModel.swift */; };
 		EFCECF3C29749C9B00B75102 /* ChangelogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCECF3B29749C9B00B75102 /* ChangelogView.swift */; };
 		EFCECF3F2974A2A800B75102 /* ViewObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCECF3E2974A2A800B75102 /* ViewObserver.swift */; };
+		EFCECF462974B56E00B75102 /* TTInterfaces-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EFCECF412974B56D00B75102 /* TTInterfaces-ExtraBold.ttf */; };
+		EFCECF472974B56E00B75102 /* TTInterfaces-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EFCECF422974B56E00B75102 /* TTInterfaces-Bold.ttf */; };
+		EFCECF482974B56E00B75102 /* TTInterfaces-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EFCECF432974B56E00B75102 /* TTInterfaces-Regular.ttf */; };
+		EFCECF492974B56E00B75102 /* TTInterfaces-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EFCECF442974B56E00B75102 /* TTInterfaces-Black.ttf */; };
+		EFCECF4A2974B56E00B75102 /* TTInterfaces-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EFCECF452974B56E00B75102 /* TTInterfaces-Medium.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +41,11 @@
 		EFCECF392974980E00B75102 /* ChangelogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangelogViewModel.swift; sourceTree = "<group>"; };
 		EFCECF3B29749C9B00B75102 /* ChangelogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangelogView.swift; sourceTree = "<group>"; };
 		EFCECF3E2974A2A800B75102 /* ViewObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewObserver.swift; sourceTree = "<group>"; };
+		EFCECF412974B56D00B75102 /* TTInterfaces-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TTInterfaces-ExtraBold.ttf"; sourceTree = "<group>"; };
+		EFCECF422974B56E00B75102 /* TTInterfaces-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TTInterfaces-Bold.ttf"; sourceTree = "<group>"; };
+		EFCECF432974B56E00B75102 /* TTInterfaces-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TTInterfaces-Regular.ttf"; sourceTree = "<group>"; };
+		EFCECF442974B56E00B75102 /* TTInterfaces-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TTInterfaces-Black.ttf"; sourceTree = "<group>"; };
+		EFCECF452974B56E00B75102 /* TTInterfaces-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TTInterfaces-Medium.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +78,7 @@
 		EFCECF182974511900B75102 /* hermes-widget-ios */ = {
 			isa = PBXGroup;
 			children = (
+				EFCECF402974B53F00B75102 /* Fonts */,
 				EFCECF3D2974A27F00B75102 /* Observables */,
 				EFCECF382974980000B75102 /* ViewModels */,
 				EFCECF352974975300B75102 /* Core */,
@@ -133,6 +144,18 @@
 			path = Observables;
 			sourceTree = "<group>";
 		};
+		EFCECF402974B53F00B75102 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				EFCECF442974B56E00B75102 /* TTInterfaces-Black.ttf */,
+				EFCECF422974B56E00B75102 /* TTInterfaces-Bold.ttf */,
+				EFCECF412974B56D00B75102 /* TTInterfaces-ExtraBold.ttf */,
+				EFCECF452974B56E00B75102 /* TTInterfaces-Medium.ttf */,
+				EFCECF432974B56E00B75102 /* TTInterfaces-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -191,8 +214,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFCECF462974B56E00B75102 /* TTInterfaces-ExtraBold.ttf in Resources */,
+				EFCECF472974B56E00B75102 /* TTInterfaces-Bold.ttf in Resources */,
 				EFCECF262974511C00B75102 /* LaunchScreen.storyboard in Resources */,
+				EFCECF482974B56E00B75102 /* TTInterfaces-Regular.ttf in Resources */,
 				EFCECF232974511C00B75102 /* Assets.xcassets in Resources */,
+				EFCECF4A2974B56E00B75102 /* TTInterfaces-Medium.ttf in Resources */,
+				EFCECF492974B56E00B75102 /* TTInterfaces-Black.ttf in Resources */,
 				EFCECF212974511900B75102 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
