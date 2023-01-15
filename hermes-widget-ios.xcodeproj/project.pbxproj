@@ -13,6 +13,11 @@
 		EFCECF212974511900B75102 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFCECF1F2974511900B75102 /* Main.storyboard */; };
 		EFCECF232974511C00B75102 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFCECF222974511C00B75102 /* Assets.xcassets */; };
 		EFCECF262974511C00B75102 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFCECF242974511C00B75102 /* LaunchScreen.storyboard */; };
+		EFCECF2F29748F5900B75102 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCECF2E29748F5900B75102 /* Home.swift */; };
+		EFCECF332974959300B75102 /* ChangelogResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCECF322974959300B75102 /* ChangelogResult.swift */; };
+		EFCECF372974976000B75102 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCECF362974976000B75102 /* Constants.swift */; };
+		EFCECF3A2974980E00B75102 /* ChangelogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCECF392974980E00B75102 /* ChangelogViewModel.swift */; };
+		EFCECF3C29749C9B00B75102 /* ChangelogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCECF3B29749C9B00B75102 /* ChangelogView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		EFCECF222974511C00B75102 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EFCECF252974511C00B75102 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EFCECF272974511C00B75102 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EFCECF2E29748F5900B75102 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		EFCECF322974959300B75102 /* ChangelogResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangelogResult.swift; sourceTree = "<group>"; };
+		EFCECF362974976000B75102 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		EFCECF392974980E00B75102 /* ChangelogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangelogViewModel.swift; sourceTree = "<group>"; };
+		EFCECF3B29749C9B00B75102 /* ChangelogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangelogView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +66,60 @@
 		EFCECF182974511900B75102 /* hermes-widget-ios */ = {
 			isa = PBXGroup;
 			children = (
+				EFCECF382974980000B75102 /* ViewModels */,
+				EFCECF352974975300B75102 /* Core */,
+				EFCECF312974958500B75102 /* Codables */,
+				EFCECF2D29748F4200B75102 /* Screens */,
 				EFCECF192974511900B75102 /* AppDelegate.swift */,
 				EFCECF1B2974511900B75102 /* SceneDelegate.swift */,
 				EFCECF1D2974511900B75102 /* ViewController.swift */,
-				EFCECF1F2974511900B75102 /* Main.storyboard */,
 				EFCECF222974511C00B75102 /* Assets.xcassets */,
 				EFCECF242974511C00B75102 /* LaunchScreen.storyboard */,
 				EFCECF272974511C00B75102 /* Info.plist */,
 			);
 			path = "hermes-widget-ios";
+			sourceTree = "<group>";
+		};
+		EFCECF2D29748F4200B75102 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				EFCECF3029748F9B00B75102 /* SwiftUI */,
+				EFCECF1F2974511900B75102 /* Main.storyboard */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		EFCECF3029748F9B00B75102 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				EFCECF2E29748F5900B75102 /* Home.swift */,
+				EFCECF3B29749C9B00B75102 /* ChangelogView.swift */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
+		EFCECF312974958500B75102 /* Codables */ = {
+			isa = PBXGroup;
+			children = (
+				EFCECF322974959300B75102 /* ChangelogResult.swift */,
+			);
+			path = Codables;
+			sourceTree = "<group>";
+		};
+		EFCECF352974975300B75102 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				EFCECF362974976000B75102 /* Constants.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		EFCECF382974980000B75102 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				EFCECF392974980E00B75102 /* ChangelogViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +193,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFCECF3A2974980E00B75102 /* ChangelogViewModel.swift in Sources */,
 				EFCECF1E2974511900B75102 /* ViewController.swift in Sources */,
+				EFCECF3C29749C9B00B75102 /* ChangelogView.swift in Sources */,
 				EFCECF1A2974511900B75102 /* AppDelegate.swift in Sources */,
+				EFCECF2F29748F5900B75102 /* Home.swift in Sources */,
+				EFCECF332974959300B75102 /* ChangelogResult.swift in Sources */,
 				EFCECF1C2974511900B75102 /* SceneDelegate.swift in Sources */,
+				EFCECF372974976000B75102 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
