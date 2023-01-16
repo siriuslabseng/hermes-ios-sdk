@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MarkdownUI
 
 struct ChangelogView: View {
     
@@ -21,7 +22,7 @@ struct ChangelogView: View {
         VStack(spacing: 0){
             VStack{
                 HStack(spacing: 0){
-                    Text("Changelog").font(.custom(FontsManager.fontBlack, size: 26))
+                    Text("Changelog").font(.custom(FontsManager.fontBlack, size: 28))
                     Spacer()
                     Button(action: {presentationMode.wrappedValue.dismiss()}){
                         Image(systemName: "multiply")
@@ -36,22 +37,23 @@ struct ChangelogView: View {
                     Text(" Hermes").font(.custom(FontsManager.fontRegular, size: 12))
                     Spacer()
                 }
-            }.padding([.horizontal], 18).padding([.top], 18).padding([.bottom], 16).background(Color.white.ignoresSafeArea())
+            }.padding([.horizontal], 18).padding([.top], 18).padding([.bottom], 16).background(Color(UIColor.systemBackground).ignoresSafeArea())
             ScrollView(showsIndicators: false){
                 Spacer().frame(height: 20)
                 LazyVStack(alignment: .center, spacing: 14){
                     ForEach(viewObserver.changelogResult.data.changelogs, id: \.id) { changelog in
                         VStack(alignment: .leading){
-                            Text(changelog.title).font(.custom(FontsManager.fontBold, size: 22))
+                            Text(changelog.title).font(.custom(FontsManager.fontBold, size: 24))
                             Spacer().frame(height: 5)
-                            Text(getStringFromDate(thisDate: changelog.createdAt)).font(.custom(FontsManager.fontRegular, size: 10)).opacity(0.8)
+                            Text(getStringFromDate(thisDate: changelog.updatedAt)).font(.custom(FontsManager.fontRegular, size: 14)).opacity(0.8)
                             Spacer().frame(height: 10)
-                            Text(changelog.content).font(.custom(FontsManager.fontRegular, size: 16))
+                            Markdown(changelog.content).font(.custom(FontsManager.fontRegular, size: 16))
+//                           Text(changelog.content).font(.custom(FontsManager.fontRegular, size: 16))
+                            
                             HStack{
                                 
                             }.frame(width: 50, height: 1).background(Color.gray)
                         }
-                        //.padding(.vertical, 12).padding(.horizontal, 14).background(Color.white).cornerRadius(6)
                     }
                 }.padding([.horizontal], 18)
             }
@@ -68,7 +70,7 @@ struct ChangelogView: View {
         
         dateFormatterPrint.timeZone = TimeZone.current
         dateFormatterPrint.locale = Locale(identifier: "en_US_POSIX")
-        dateFormatterPrint.dateFormat = "EEE, dd MMM YY"
+        dateFormatterPrint.dateFormat = "EEEE, dd MMMM YY"
         return dateFormatterPrint.string(from: date ?? Date())
     }
 }

@@ -52,7 +52,7 @@ struct Home: View {
                     Text("Show Changelog").foregroundColor(Color.white).font(.custom(FontsManager.fontBold, size: 16))
                 }.padding(.vertical, 10).padding(.horizontal, 16).background(Color(.systemBlue)).cornerRadius(6).padding(.top, 10)
             }
-            .padding(.horizontal, 20).frame(minHeight: 0, maxHeight: .infinity)
+            .padding(.horizontal, 20).frame(minHeight: 0, maxHeight: .infinity).background(Color(UIColor.systemBackground))
         }.overlay(loading ?  VStack{
             ProgressView().progressViewStyle(CircularProgressViewStyle(tint: Color.primary))
                 .frame(width: 20, height: 20)

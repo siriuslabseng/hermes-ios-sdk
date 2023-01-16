@@ -25,6 +25,7 @@
 		EFCECF532974B9AF00B75102 /* TTInterfaces-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EFCECF4E2974B9AF00B75102 /* TTInterfaces-ExtraBold.ttf */; };
 		EFCECF542974B9AF00B75102 /* TTInterfaces-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EFCECF4F2974B9AF00B75102 /* TTInterfaces-Bold.ttf */; };
 		EFCECF562974BBEA00B75102 /* FontsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCECF552974BBEA00B75102 /* FontsManager.swift */; };
+		EFCECF592974C70F00B75102 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = EFCECF582974C70F00B75102 /* MarkdownUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFCECF592974C70F00B75102 /* MarkdownUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,6 +177,9 @@
 			dependencies = (
 			);
 			name = "hermes-widget-ios";
+			packageProductDependencies = (
+				EFCECF582974C70F00B75102 /* MarkdownUI */,
+			);
 			productName = "hermes-widget-ios";
 			productReference = EFCECF162974511900B75102 /* hermes-widget-ios.app */;
 			productType = "com.apple.product-type.application";
@@ -203,6 +208,9 @@
 				Base,
 			);
 			mainGroup = EFCECF0D2974511900B75102;
+			packageReferences = (
+				EFCECF572974C70F00B75102 /* XCRemoteSwiftPackageReference "MarkdownUI" */,
+			);
 			productRefGroup = EFCECF172974511900B75102 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -472,6 +480,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EFCECF572974C70F00B75102 /* XCRemoteSwiftPackageReference "MarkdownUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/gonzalezreal/MarkdownUI";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EFCECF582974C70F00B75102 /* MarkdownUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EFCECF572974C70F00B75102 /* XCRemoteSwiftPackageReference "MarkdownUI" */;
+			productName = MarkdownUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EFCECF0E2974511900B75102 /* Project object */;
 }
