@@ -47,10 +47,8 @@ struct ChangelogView: View {
                             Spacer().frame(height: 1)
                             Text(getStringFromDate(thisDate: changelog.updatedAt)).font(.custom(FontsManager.fontRegular, size: 14)).opacity(0.8)
                             Spacer().frame(height: 15)
-                            Markdown(changelog.content).font(.custom(FontsManager.fontRegular, size: 16))
-                            Text(changelog.content).font(.custom(FontsManager.fontRegular, size: 16))
-//                           Text(changelog.content).font(.custom(FontsManager.fontRegular, size: 16))
-                            
+                            let content = MarkdownContent(changelog.content)
+                            Markdown(content).font(.custom(FontsManager.fontRegular, size: 16))
                             HStack{
                                 
                             }.frame(width: 50, height: 1).background(Color.gray)
@@ -64,7 +62,6 @@ struct ChangelogView: View {
     }
     
     func getStringFromDate(thisDate: String) -> String {
-        print("This date \(thisDate)")
         let dateFormatterGet = DateFormatter()
         dateFormatterGet.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         

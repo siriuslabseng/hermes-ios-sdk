@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B335D6F7A70728E86670B175 /* Pods_hermes_widget_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DA3FF322D07EB6F21D5B877 /* Pods_hermes_widget_ios.framework */; };
-		EF2489BD2BE8F36A008E60F4 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = EF2489BC2BE8F36A008E60F4 /* MarkdownUI */; };
+		EF2489C72BE94410008E60F4 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = EF2489C62BE94410008E60F4 /* MarkdownUI */; };
 		EFCECF1A2974511900B75102 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCECF192974511900B75102 /* AppDelegate.swift */; };
 		EFCECF1C2974511900B75102 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCECF1B2974511900B75102 /* SceneDelegate.swift */; };
 		EFCECF1E2974511900B75102 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCECF1D2974511900B75102 /* ViewController.swift */; };
@@ -60,8 +60,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF2489BD2BE8F36A008E60F4 /* MarkdownUI in Frameworks */,
 				B335D6F7A70728E86670B175 /* Pods_hermes_widget_ios.framework in Frameworks */,
+				EF2489C72BE94410008E60F4 /* MarkdownUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,7 +74,6 @@
 				A17257938E56984D3E7BEC07 /* Pods-hermes-widget-ios.debug.xcconfig */,
 				784CDD772960655F490E101F /* Pods-hermes-widget-ios.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -84,6 +83,13 @@
 				8DA3FF322D07EB6F21D5B877 /* Pods_hermes_widget_ios.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EF2489C12BE93A38008E60F4 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 		EFCECF0D2974511900B75102 = {
@@ -108,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				EFCECF402974B53F00B75102 /* Fonts */,
+				EF2489C12BE93A38008E60F4 /* CustomViews */,
 				EFCECF3D2974A27F00B75102 /* Observables */,
 				EFCECF382974980000B75102 /* ViewModels */,
 				EFCECF352974975300B75102 /* Core */,
@@ -197,7 +204,7 @@
 				EFCECF122974511900B75102 /* Sources */,
 				EFCECF132974511900B75102 /* Frameworks */,
 				EFCECF142974511900B75102 /* Resources */,
-				97568DF063F21635490C07AE /* [CP] Embed Pods Frameworks */,
+				E13C7E0551A7B6EE1AE6E730 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -205,7 +212,7 @@
 			);
 			name = "hermes-widget-ios";
 			packageProductDependencies = (
-				EF2489BC2BE8F36A008E60F4 /* MarkdownUI */,
+				EF2489C62BE94410008E60F4 /* MarkdownUI */,
 			);
 			productName = "hermes-widget-ios";
 			productReference = EFCECF162974511900B75102 /* hermes-widget-ios.app */;
@@ -236,7 +243,7 @@
 			);
 			mainGroup = EFCECF0D2974511900B75102;
 			packageReferences = (
-				EF2489BB2BE8F36A008E60F4 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
+				EF2489C52BE94410008E60F4 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
 			);
 			productRefGroup = EFCECF172974511900B75102 /* Products */;
 			projectDirPath = "";
@@ -266,7 +273,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		97568DF063F21635490C07AE /* [CP] Embed Pods Frameworks */ = {
+		E13C7E0551A7B6EE1AE6E730 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -397,7 +404,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -451,7 +458,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -555,7 +562,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		EF2489BB2BE8F36A008E60F4 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */ = {
+		EF2489C52BE94410008E60F4 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/gonzalezreal/swift-markdown-ui";
 			requirement = {
@@ -566,9 +573,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		EF2489BC2BE8F36A008E60F4 /* MarkdownUI */ = {
+		EF2489C62BE94410008E60F4 /* MarkdownUI */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = EF2489BB2BE8F36A008E60F4 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
+			package = EF2489C52BE94410008E60F4 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
 			productName = MarkdownUI;
 		};
 /* End XCSwiftPackageProductDependency section */
