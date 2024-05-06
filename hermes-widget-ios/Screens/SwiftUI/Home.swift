@@ -22,7 +22,7 @@ struct Home: View {
             VStack(spacing: 30){
                 VStack(alignment: .leading){
                     Text("Widget Slug").font(.custom(FontsManager.fontRegular, size: 16))
-                    TextField("Type or paste slud_id here", text: $slug_id)
+                    TextField("Type or paste slug_id here", text: $slug_id)
                         .keyboardType(.default)
                         .font(.custom(FontsManager.fontRegular, size: 16))
                     //.textInputAutocapitalization(.sentences)
