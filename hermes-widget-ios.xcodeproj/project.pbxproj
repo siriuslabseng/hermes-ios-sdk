@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B335D6F7A70728E86670B175 /* Pods_hermes_widget_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DA3FF322D07EB6F21D5B877 /* Pods_hermes_widget_ios.framework */; };
 		EF2489C72BE94410008E60F4 /* MarkdownUI in Frameworks */ = {isa = PBXBuildFile; productRef = EF2489C62BE94410008E60F4 /* MarkdownUI */; };
+		EF2489C92BEA4E8B008E60F4 /* SingleChangelogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF2489C82BEA4E8B008E60F4 /* SingleChangelogView.swift */; };
 		EFCECF1A2974511900B75102 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCECF192974511900B75102 /* AppDelegate.swift */; };
 		EFCECF1C2974511900B75102 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCECF1B2974511900B75102 /* SceneDelegate.swift */; };
 		EFCECF1E2974511900B75102 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCECF1D2974511900B75102 /* ViewController.swift */; };
@@ -33,6 +34,7 @@
 		784CDD772960655F490E101F /* Pods-hermes-widget-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hermes-widget-ios.release.xcconfig"; path = "Target Support Files/Pods-hermes-widget-ios/Pods-hermes-widget-ios.release.xcconfig"; sourceTree = "<group>"; };
 		8DA3FF322D07EB6F21D5B877 /* Pods_hermes_widget_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hermes_widget_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A17257938E56984D3E7BEC07 /* Pods-hermes-widget-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hermes-widget-ios.debug.xcconfig"; path = "Target Support Files/Pods-hermes-widget-ios/Pods-hermes-widget-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		EF2489C82BEA4E8B008E60F4 /* SingleChangelogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleChangelogView.swift; sourceTree = "<group>"; };
 		EFCECF162974511900B75102 /* hermes-widget-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "hermes-widget-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EFCECF192974511900B75102 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EFCECF1B2974511900B75102 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 			children = (
 				EFCECF2E29748F5900B75102 /* Home.swift */,
 				EFCECF3B29749C9B00B75102 /* ChangelogView.swift */,
+				EF2489C82BEA4E8B008E60F4 /* SingleChangelogView.swift */,
 			);
 			path = SwiftUI;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				EFCECF1A2974511900B75102 /* AppDelegate.swift in Sources */,
 				EFCECF2F29748F5900B75102 /* Home.swift in Sources */,
 				EFCECF332974959300B75102 /* ChangelogResult.swift in Sources */,
+				EF2489C92BEA4E8B008E60F4 /* SingleChangelogView.swift in Sources */,
 				EFCECF1C2974511900B75102 /* SceneDelegate.swift in Sources */,
 				EFCECF372974976000B75102 /* Constants.swift in Sources */,
 			);

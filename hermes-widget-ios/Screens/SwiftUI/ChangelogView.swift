@@ -42,18 +42,20 @@ struct ChangelogView: View {
                 Spacer().frame(height: 20)
                 LazyVStack(alignment: .center, spacing: 14){
                     ForEach(viewObserver.changelogResult.data.changelogs, id: \.id) { changelog in
-                        VStack(alignment: .leading){
-                            Text(changelog.title).font(.custom(FontsManager.fontBold, size: 24))
-                            Spacer().frame(height: 1)
-                            Text(getStringFromDate(thisDate: changelog.updatedAt)).font(.custom(FontsManager.fontRegular, size: 14)).opacity(0.8)
-                            Spacer().frame(height: 15)
-                            let content = MarkdownContent(changelog.content)
-                            Markdown(content).font(.custom(FontsManager.fontRegular, size: 16))
-                            HStack{
-                                
-                            }.frame(width: 50, height: 1).background(Color.gray)
-                            Spacer().frame(height: 15)
-                        }
+//                        VStack(alignment: .leading){
+//                            Text(changelog.title).font(.custom(FontsManager.fontBold, size: 24))
+//                            Spacer().frame(height: 1)
+//                            Text(getStringFromDate(thisDate: changelog.updatedAt)).font(.custom(FontsManager.fontRegular, size: 14)).opacity(0.8)
+//                            Spacer().frame(height: 15)
+//                            let content = MarkdownContent(changelog.content)
+//                            Markdown(content).font(.custom(FontsManager.fontRegular, size: 16))
+//                          
+//                            HStack{
+//                                
+//                            }.frame(width: 50, height: 1).background(Color.gray)
+//                            Spacer().frame(height: 15)
+//                        }
+                        SingleChangelogView(changelog: changelog)
                     }
                 }.padding([.horizontal], 18)
             }
