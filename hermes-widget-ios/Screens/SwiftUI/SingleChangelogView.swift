@@ -37,6 +37,7 @@ struct SingleChangelogView: View {
         dateFormatterPrint.timeZone = TimeZone.current
         dateFormatterPrint.locale = Locale(identifier: "en_US_POSIX")
         dateFormatterPrint.dateFormat = "EEEE, dd MMMM YY"
+        print(thisDate)
         return dateFormatterPrint.string(from: date ?? Date())
     }
 }

@@ -63,18 +63,18 @@ struct ChangelogView: View {
         }.background(Color(.systemGray5).ignoresSafeArea())
     }
     
-    func getStringFromDate(thisDate: String) -> String {
-        let dateFormatterGet = DateFormatter()
-        dateFormatterGet.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
-        
-        let dateFormatterPrint = DateFormatter()
-        let date: Date? = dateFormatterGet.date(from: thisDate)
-        
-        dateFormatterPrint.timeZone = TimeZone.current
-        dateFormatterPrint.locale = Locale(identifier: "en_US_POSIX")
-        dateFormatterPrint.dateFormat = "EEEE, dd MMMM YY"
-        return dateFormatterPrint.string(from: date ?? Date())
-    }
+//    func getStringFromDate(thisDate: String) -> String {
+//        let dateFormatterGet = DateFormatter()
+//        dateFormatterGet.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+//        
+//        let dateFormatterPrint = DateFormatter()
+//        let date: Date? = dateFormatterGet.date(from: thisDate)
+//        
+//        dateFormatterPrint.timeZone = TimeZone.current
+//        dateFormatterPrint.locale = Locale(identifier: "en_US_POSIX")
+//        dateFormatterPrint.dateFormat = "EEEE, dd MMMM YY"
+//        return dateFormatterPrint.string(from: date ?? Date())
+//    }
 }
 
 struct ChangelogView_Previews: PreviewProvider {
