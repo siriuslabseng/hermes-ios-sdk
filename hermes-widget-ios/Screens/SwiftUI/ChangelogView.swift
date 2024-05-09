@@ -12,10 +12,7 @@ struct ChangelogView: View {
     
     @ObservedObject var viewObserver : ViewObserver
     @Environment(\.presentationMode) var presentationMode
-    //    var fontRegular = "TTInterfaces-Regular"
-    //    var fontMedium = "TTInterfaces-Medium"
-    //    var fontBold = "TTInterfaces-Bold"
-    //    var fontBlack = "TTInterfaces-Black"
+    @State var loading = false
     
     
     var body: some View {
@@ -75,6 +72,22 @@ struct ChangelogView: View {
 //        dateFormatterPrint.dateFormat = "EEEE, dd MMMM YY"
 //        return dateFormatterPrint.string(from: date ?? Date())
 //    }
+    
+    func fetchChangelog(){
+        loading = true
+        changeViewModel.fetchStuff(slug_id: slug_id, public_key: public_key, completion: { result in
+            switch result {
+            case .success(let httpResults):
+                DispatchQueue.main.async {
+                    viewObserver.changelogResult = httpResults
+                    
+                    loading = false
+                }
+            case .failure(let error):
+                print("Request failed with error: \(error)")
+            }
+        })
+    }
 }
 
 struct ChangelogView_Previews: PreviewProvider {

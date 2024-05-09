@@ -14,7 +14,7 @@ struct Home: View {
     @Environment(\.colorScheme) var colorScheme
     @StateObject var viewObserver = ViewObserver()
     var changeViewModel = ChangelogViewModel()
-    @State var loading = false
+    
     @State var showChangelogView = false
     
     var body: some View {
@@ -47,7 +47,7 @@ struct Home: View {
                         .cornerRadius(8)
                 }
                 Button(action: {
-                    fetchChangelog()
+                    showChangelogView = true
                 }){
                     Text("Show Changelog").foregroundColor(Color.white).font(.custom(FontsManager.fontBold, size: 16))
                 }.padding(.vertical, 10).padding(.horizontal, 16).background(Color(.systemBlue)).cornerRadius(6).padding(.top, 10)
@@ -63,21 +63,7 @@ struct Home: View {
         
     }
     
-    func fetchChangelog(){
-        loading = true
-        changeViewModel.fetchStuff(slug_id: slug_id, public_key: public_key, completion: { result in
-            switch result {
-            case .success(let httpResults):
-                DispatchQueue.main.async {
-                    viewObserver.changelogResult = httpResults
-                    showChangelogView = true
-                    loading = false
-                }
-            case .failure(let error):
-                print("Request failed with error: \(error)")
-            }
-        })
-    }
+   
     
 }
 
