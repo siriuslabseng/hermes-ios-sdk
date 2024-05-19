@@ -45,13 +45,13 @@ struct SingleChangelogView: View {
                     Text("😢")
                     Text("\(changelog.sobReaction)")
                 }
-            }
+            }.font(.custom(FontsManager.fontRegular, size: 14))
             Spacer().frame(height: 15)
 //            HStack{
 //                
 //            }.frame(width: 50, height: 1).background(Color.gray)
             Spacer().frame(height: 15)
-        }
+        }.font(.custom(FontsManager.fontRegular, size: 16))
     }
     
     func getStringFromDate(thisDate: String) -> String {
