@@ -26,11 +26,13 @@ struct Changelog: Codable {
     let app, company: String
     let author: Author
     let createdAt, updatedAt: String
+    let fireReaction, heartReaction, smileReaction, sobReaction, thumbsDownReaction, thumbsUpReaction: Int
     let v: Int
 
     enum CodingKeys: String, CodingKey {
         case id = "_id"
         case status, title, content, app, company, author, createdAt, updatedAt
+        case fireReaction, heartReaction, smileReaction, sobReaction, thumbsDownReaction, thumbsUpReaction
         case v = "__v"
     }
 }

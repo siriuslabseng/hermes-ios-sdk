@@ -13,7 +13,7 @@ struct Home: View {
     @AppStorage("public_key") var public_key = ""
     @Environment(\.colorScheme) var colorScheme
     @StateObject var viewObserver = ViewObserver()
-    var changeViewModel = ChangelogViewModel()
+    
     
     @State var showChangelogView = false
     
@@ -53,16 +53,12 @@ struct Home: View {
                 }.padding(.vertical, 10).padding(.horizontal, 16).background(Color(.systemBlue)).cornerRadius(6).padding(.top, 10)
             }
             .padding(.horizontal, 20).frame(minHeight: 0, maxHeight: .infinity).background(Color(UIColor.systemBackground))
-        }.overlay(loading ?  VStack{
-            ProgressView().progressViewStyle(CircularProgressViewStyle(tint: Color.primary))
-                .frame(width: 20, height: 20)
-                .scaleEffect(1.0, anchor: .center)
-        }  : nil, alignment: .bottom).sheet(isPresented: $showChangelogView){
-            ChangelogView(viewObserver: viewObserver)
         }
-        
+        //.overlay(loading ?  : nil, alignment: .bottom)
+        .sheet(isPresented: $showChangelogView){
+            ChangelogView(viewObserver: viewObserver, slug_id: slug_id, public_key: public_key)
+        }
     }
-    
    
     
 }
