@@ -1,6 +1,15 @@
 {
-  "originHash" : "04d9e4d8045a6310349928a2f8d2e6c6fe1c41e0c952a800e312800fac9624f9",
+  "originHash" : "c5a699ef441b0cb14268e88ef2c32587b8c4f8b7f08c78797f9bf6596ed2be80",
   "pins" : [
+    {
+      "identity" : "mdtext",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Lambdo-Labs/MDText",
+      "state" : {
+        "revision" : "7b1f74239e4b41799a36b404ff30e21fca6fb9d7",
+        "version" : "0.0.10"
+      }
+    },
     {
       "identity" : "networkimage",
       "kind" : "remoteSourceControl",

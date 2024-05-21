@@ -28,6 +28,7 @@
 		EFCECF532974B9AF00B75102 /* TTInterfaces-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EFCECF4E2974B9AF00B75102 /* TTInterfaces-ExtraBold.ttf */; };
 		EFCECF542974B9AF00B75102 /* TTInterfaces-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EFCECF4F2974B9AF00B75102 /* TTInterfaces-Bold.ttf */; };
 		EFCECF562974BBEA00B75102 /* FontsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFCECF552974BBEA00B75102 /* FontsManager.swift */; };
+		EFDA341D2BFB574A000C1BBD /* MDText in Frameworks */ = {isa = PBXBuildFile; productRef = EFDA341C2BFB574A000C1BBD /* MDText */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 			files = (
 				B335D6F7A70728E86670B175 /* Pods_hermes_widget_ios.framework in Frameworks */,
 				EF2489C72BE94410008E60F4 /* MarkdownUI in Frameworks */,
+				EFDA341D2BFB574A000C1BBD /* MDText in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,6 +218,7 @@
 			name = "hermes-widget-ios";
 			packageProductDependencies = (
 				EF2489C62BE94410008E60F4 /* MarkdownUI */,
+				EFDA341C2BFB574A000C1BBD /* MDText */,
 			);
 			productName = "hermes-widget-ios";
 			productReference = EFCECF162974511900B75102 /* hermes-widget-ios.app */;
@@ -247,6 +250,7 @@
 			mainGroup = EFCECF0D2974511900B75102;
 			packageReferences = (
 				EF2489C52BE94410008E60F4 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */,
+				EFDA341B2BFB574A000C1BBD /* XCRemoteSwiftPackageReference "MDText" */,
 			);
 			productRefGroup = EFCECF172974511900B75102 /* Products */;
 			projectDirPath = "";
@@ -574,6 +578,14 @@
 				minimumVersion = 2.3.0;
 			};
 		};
+		EFDA341B2BFB574A000C1BBD /* XCRemoteSwiftPackageReference "MDText" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Lambdo-Labs/MDText";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.10;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -581,6 +593,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = EF2489C52BE94410008E60F4 /* XCRemoteSwiftPackageReference "swift-markdown-ui" */;
 			productName = MarkdownUI;
+		};
+		EFDA341C2BFB574A000C1BBD /* MDText */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EFDA341B2BFB574A000C1BBD /* XCRemoteSwiftPackageReference "MDText" */;
+			productName = MDText;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
