@@ -7,9 +7,13 @@
 
 import SwiftUI
 import MarkdownUI
+import MDText
 
 struct SingleChangelogView: View {
     @Binding var changelog : Changelog
+    var verticalPadding : CGFloat = 7
+    var horizontalPadding : CGFloat = 8
+    var cornerRadius : CGFloat = 20
     
     var body: some View {
         VStack(alignment: .leading){
@@ -17,41 +21,61 @@ struct SingleChangelogView: View {
             Spacer().frame(height: 1)
             Text(getStringFromDate(thisDate: changelog.updatedAt)).font(.custom(FontsManager.fontRegular, size: 14)).opacity(0.8)
             Spacer().frame(height: 15)
-            let content = MarkdownContent(changelog.content)
-            Markdown(content).font(.custom(FontsManager.fontRegular, size: 16))
+            //let content = MarkdownContent(changelog.content)
+            Markdown(changelog.content).font(.custom(FontsManager.fontRegular, size: 16))
+            //MDText(markdown: changelog.content).font(.custom(FontsManager.fontRegular, size: 16))
             Spacer().frame(height:15)
-            HStack(spacing: 20){
+            HStack(spacing: 0){
                 Button(action: {}){
                     Text("❤️")
                     Text("\(changelog.heartReaction)")
-                }
+                }.padding(.vertical, verticalPadding)
+                    .padding(.horizontal, horizontalPadding)
+                    .background(Color(.systemGray4))
+                    .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
+                Spacer()
                 Button(action: {}){
                     Text("😀")
                     Text("\(changelog.smileReaction)")
-                }
+                }.padding(.vertical, verticalPadding)
+                    .padding(.horizontal, horizontalPadding)
+                    .background(Color(.systemGray4))
+                    .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
+                Spacer()
                 Button(action: {}){
                     Text("🔥")
                     Text("\(changelog.fireReaction)")
-                }
+                }.padding(.vertical, verticalPadding)
+                    .padding(.horizontal, horizontalPadding)
+                    .background(Color(.systemGray4))
+                    .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
+                Spacer()
                 Button(action: {}){
                     Text("👍🏼")
                     Text("\(changelog.thumbsUpReaction)")
-                }
+                }.padding(.vertical, verticalPadding)
+                    .padding(.horizontal, horizontalPadding)
+                    .background(Color(.systemGray4))
+                    .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
+                Spacer()
                 Button(action: {}){
                     Text("👎🏼")
                     Text("\(changelog.thumbsDownReaction)")
-                }
+                }.padding(.vertical, verticalPadding)
+                    .padding(.horizontal, horizontalPadding)
+                    .background(Color(.systemGray4))
+                    .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
+                Spacer()
                 Button(action: {}){
                     Text("😢")
                     Text("\(changelog.sobReaction)")
-                }
-            }.font(.custom(FontsManager.fontRegular, size: 14))
-            Spacer().frame(height: 15)
-//            HStack{
-//                
-//            }.frame(width: 50, height: 1).background(Color.gray)
-            Spacer().frame(height: 15)
-        }.font(.custom(FontsManager.fontRegular, size: 16))
+                }.padding(.vertical, verticalPadding)
+                    .padding(.horizontal, horizontalPadding)
+                    .background(Color(.systemGray4))
+                    .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
+            }.padding(.horizontal, 5).font(.custom(FontsManager.fontRegular, size: 14))
+            Spacer().frame(height: 20)
+        }.frame(minWidth: 0, maxWidth: .infinity, alignment: .leading).font(.custom(FontsManager.fontRegular, size: 16))
     }
     
     func getStringFromDate(thisDate: String) -> String {

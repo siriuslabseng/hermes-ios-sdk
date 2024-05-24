@@ -18,6 +18,7 @@ struct ChangelogView: View {
     var changeViewModel = ChangelogViewModel()
     @State var changelog = [Changelog]()
     
+    
     var body: some View {
         VStack(spacing: 0){
             VStack{
@@ -36,6 +37,8 @@ struct ChangelogView: View {
                     Image("logo").resizable().scaledToFit().frame(width: 20).padding(.top, 3)
                     Text(" Hermes").font(.custom(FontsManager.fontRegular, size: 12))
                     Spacer()
+                }.onTapGesture {
+                    
                 }
             }.padding([.horizontal], 18).padding([.top], 18).padding([.bottom], 16).background(Color(UIColor.systemBackground).ignoresSafeArea())
             if (loading){
@@ -57,9 +60,10 @@ struct ChangelogView: View {
                 }
                 //Spacer()
             }
-        }.background(Color(.systemGray5).ignoresSafeArea())
-            .onAppear{
-            fetchChangelog()
+        }.background(Color(.systemGray5).ignoresSafeArea()).onAppear{
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
+                fetchChangelog()
+            }
         }
     }
 
