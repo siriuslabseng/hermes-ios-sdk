@@ -1,0 +1,655 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EF28D8052C079BAF00EE0DBF /* Diesel.docc in Sources */ = {isa = PBXBuildFile; fileRef = EF28D8042C079BAF00EE0DBF /* Diesel.docc */; };
+		EF28D80B2C079BB000EE0DBF /* Diesel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF28D8002C079BAF00EE0DBF /* Diesel.framework */; };
+		EF28D8102C079BB000EE0DBF /* DieselTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF28D80F2C079BB000EE0DBF /* DieselTests.swift */; };
+		EF28D8112C079BB000EE0DBF /* Diesel.h in Headers */ = {isa = PBXBuildFile; fileRef = EF28D8032C079BAF00EE0DBF /* Diesel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EF28D8212C079BF000EE0DBF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF28D8202C079BF000EE0DBF /* AppDelegate.swift */; };
+		EF28D8232C079BF000EE0DBF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF28D8222C079BF000EE0DBF /* SceneDelegate.swift */; };
+		EF28D8252C079BF000EE0DBF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF28D8242C079BF000EE0DBF /* ViewController.swift */; };
+		EF28D8282C079BF000EE0DBF /* Base in Resources */ = {isa = PBXBuildFile; fileRef = EF28D8272C079BF000EE0DBF /* Base */; };
+		EF28D82B2C079BF000EE0DBF /* DieselExample.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EF28D8292C079BF000EE0DBF /* DieselExample.xcdatamodeld */; };
+		EF28D82D2C079BF300EE0DBF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF28D82C2C079BF300EE0DBF /* Assets.xcassets */; };
+		EF28D8302C079BF300EE0DBF /* Base in Resources */ = {isa = PBXBuildFile; fileRef = EF28D82F2C079BF300EE0DBF /* Base */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EF28D80C2C079BB000EE0DBF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EF28D7F72C079BAF00EE0DBF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EF28D7FF2C079BAF00EE0DBF;
+			remoteInfo = Diesel;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		EF28D8002C079BAF00EE0DBF /* Diesel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Diesel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF28D8032C079BAF00EE0DBF /* Diesel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Diesel.h; sourceTree = "<group>"; };
+		EF28D8042C079BAF00EE0DBF /* Diesel.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = Diesel.docc; sourceTree = "<group>"; };
+		EF28D80A2C079BB000EE0DBF /* DieselTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DieselTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF28D80F2C079BB000EE0DBF /* DieselTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DieselTests.swift; sourceTree = "<group>"; };
+		EF28D81E2C079BF000EE0DBF /* DieselExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DieselExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF28D8202C079BF000EE0DBF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EF28D8222C079BF000EE0DBF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		EF28D8242C079BF000EE0DBF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EF28D8272C079BF000EE0DBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EF28D82A2C079BF000EE0DBF /* DieselExample.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DieselExample.xcdatamodel; sourceTree = "<group>"; };
+		EF28D82C2C079BF300EE0DBF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EF28D82F2C079BF300EE0DBF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EF28D8312C079BF300EE0DBF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EF28D7FD2C079BAF00EE0DBF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF28D8072C079BB000EE0DBF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF28D80B2C079BB000EE0DBF /* Diesel.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF28D81B2C079BF000EE0DBF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EF28D7F62C079BAF00EE0DBF = {
+			isa = PBXGroup;
+			children = (
+				EF28D8022C079BAF00EE0DBF /* Diesel */,
+				EF28D80E2C079BB000EE0DBF /* DieselTests */,
+				EF28D81F2C079BF000EE0DBF /* DieselExample */,
+				EF28D8012C079BAF00EE0DBF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EF28D8012C079BAF00EE0DBF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EF28D8002C079BAF00EE0DBF /* Diesel.framework */,
+				EF28D80A2C079BB000EE0DBF /* DieselTests.xctest */,
+				EF28D81E2C079BF000EE0DBF /* DieselExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EF28D8022C079BAF00EE0DBF /* Diesel */ = {
+			isa = PBXGroup;
+			children = (
+				EF28D8032C079BAF00EE0DBF /* Diesel.h */,
+				EF28D8042C079BAF00EE0DBF /* Diesel.docc */,
+			);
+			path = Diesel;
+			sourceTree = "<group>";
+		};
+		EF28D80E2C079BB000EE0DBF /* DieselTests */ = {
+			isa = PBXGroup;
+			children = (
+				EF28D80F2C079BB000EE0DBF /* DieselTests.swift */,
+			);
+			path = DieselTests;
+			sourceTree = "<group>";
+		};
+		EF28D81F2C079BF000EE0DBF /* DieselExample */ = {
+			isa = PBXGroup;
+			children = (
+				EF28D8202C079BF000EE0DBF /* AppDelegate.swift */,
+				EF28D8222C079BF000EE0DBF /* SceneDelegate.swift */,
+				EF28D8242C079BF000EE0DBF /* ViewController.swift */,
+				EF28D8262C079BF000EE0DBF /* Main.storyboard */,
+				EF28D82C2C079BF300EE0DBF /* Assets.xcassets */,
+				EF28D82E2C079BF300EE0DBF /* LaunchScreen.storyboard */,
+				EF28D8312C079BF300EE0DBF /* Info.plist */,
+				EF28D8292C079BF000EE0DBF /* DieselExample.xcdatamodeld */,
+			);
+			path = DieselExample;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		EF28D7FB2C079BAF00EE0DBF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF28D8112C079BB000EE0DBF /* Diesel.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		EF28D7FF2C079BAF00EE0DBF /* Diesel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF28D8142C079BB000EE0DBF /* Build configuration list for PBXNativeTarget "Diesel" */;
+			buildPhases = (
+				EF28D7FB2C079BAF00EE0DBF /* Headers */,
+				EF28D7FC2C079BAF00EE0DBF /* Sources */,
+				EF28D7FD2C079BAF00EE0DBF /* Frameworks */,
+				EF28D7FE2C079BAF00EE0DBF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Diesel;
+			productName = Diesel;
+			productReference = EF28D8002C079BAF00EE0DBF /* Diesel.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		EF28D8092C079BB000EE0DBF /* DieselTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF28D8172C079BB000EE0DBF /* Build configuration list for PBXNativeTarget "DieselTests" */;
+			buildPhases = (
+				EF28D8062C079BB000EE0DBF /* Sources */,
+				EF28D8072C079BB000EE0DBF /* Frameworks */,
+				EF28D8082C079BB000EE0DBF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EF28D80D2C079BB000EE0DBF /* PBXTargetDependency */,
+			);
+			name = DieselTests;
+			productName = DieselTests;
+			productReference = EF28D80A2C079BB000EE0DBF /* DieselTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		EF28D81D2C079BF000EE0DBF /* DieselExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF28D8322C079BF300EE0DBF /* Build configuration list for PBXNativeTarget "DieselExample" */;
+			buildPhases = (
+				EF28D81A2C079BF000EE0DBF /* Sources */,
+				EF28D81B2C079BF000EE0DBF /* Frameworks */,
+				EF28D81C2C079BF000EE0DBF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DieselExample;
+			productName = DieselExample;
+			productReference = EF28D81E2C079BF000EE0DBF /* DieselExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EF28D7F72C079BAF00EE0DBF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1530;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					EF28D7FF2C079BAF00EE0DBF = {
+						CreatedOnToolsVersion = 15.3;
+					};
+					EF28D8092C079BB000EE0DBF = {
+						CreatedOnToolsVersion = 15.3;
+					};
+					EF28D81D2C079BF000EE0DBF = {
+						CreatedOnToolsVersion = 15.3;
+					};
+				};
+			};
+			buildConfigurationList = EF28D7FA2C079BAF00EE0DBF /* Build configuration list for PBXProject "Diesel" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EF28D7F62C079BAF00EE0DBF;
+			productRefGroup = EF28D8012C079BAF00EE0DBF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EF28D7FF2C079BAF00EE0DBF /* Diesel */,
+				EF28D8092C079BB000EE0DBF /* DieselTests */,
+				EF28D81D2C079BF000EE0DBF /* DieselExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EF28D7FE2C079BAF00EE0DBF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF28D8082C079BB000EE0DBF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF28D81C2C079BF000EE0DBF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF28D82D2C079BF300EE0DBF /* Assets.xcassets in Resources */,
+				EF28D8302C079BF300EE0DBF /* Base in Resources */,
+				EF28D8282C079BF000EE0DBF /* Base in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EF28D7FC2C079BAF00EE0DBF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF28D8052C079BAF00EE0DBF /* Diesel.docc in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF28D8062C079BB000EE0DBF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF28D8102C079BB000EE0DBF /* DieselTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF28D81A2C079BF000EE0DBF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF28D82B2C079BF000EE0DBF /* DieselExample.xcdatamodeld in Sources */,
+				EF28D8252C079BF000EE0DBF /* ViewController.swift in Sources */,
+				EF28D8212C079BF000EE0DBF /* AppDelegate.swift in Sources */,
+				EF28D8232C079BF000EE0DBF /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EF28D80D2C079BB000EE0DBF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EF28D7FF2C079BAF00EE0DBF /* Diesel */;
+			targetProxy = EF28D80C2C079BB000EE0DBF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		EF28D8262C079BF000EE0DBF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EF28D8272C079BF000EE0DBF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EF28D82E2C079BF300EE0DBF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EF28D82F2C079BF300EE0DBF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EF28D8122C079BB000EE0DBF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		EF28D8132C079BB000EE0DBF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		EF28D8152C079BB000EE0DBF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = KPGYDGPJU8;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ephod.lib.Diesel;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EF28D8162C079BB000EE0DBF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = KPGYDGPJU8;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.ephod.lib.Diesel;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EF28D8182C079BB000EE0DBF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KPGYDGPJU8;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ephod.lib.DieselTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EF28D8192C079BB000EE0DBF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KPGYDGPJU8;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ephod.lib.DieselTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EF28D8332C079BF300EE0DBF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KPGYDGPJU8;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DieselExample/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ephod.lib.DieselExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EF28D8342C079BF300EE0DBF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KPGYDGPJU8;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DieselExample/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ephod.lib.DieselExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EF28D7FA2C079BAF00EE0DBF /* Build configuration list for PBXProject "Diesel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF28D8122C079BB000EE0DBF /* Debug */,
+				EF28D8132C079BB000EE0DBF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF28D8142C079BB000EE0DBF /* Build configuration list for PBXNativeTarget "Diesel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF28D8152C079BB000EE0DBF /* Debug */,
+				EF28D8162C079BB000EE0DBF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF28D8172C079BB000EE0DBF /* Build configuration list for PBXNativeTarget "DieselTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF28D8182C079BB000EE0DBF /* Debug */,
+				EF28D8192C079BB000EE0DBF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EF28D8322C079BF300EE0DBF /* Build configuration list for PBXNativeTarget "DieselExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF28D8332C079BF300EE0DBF /* Debug */,
+				EF28D8342C079BF300EE0DBF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		EF28D8292C079BF000EE0DBF /* DieselExample.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				EF28D82A2C079BF000EE0DBF /* DieselExample.xcdatamodel */,
+			);
+			currentVersion = EF28D82A2C079BF000EE0DBF /* DieselExample.xcdatamodel */;
+			path = DieselExample.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = EF28D7F72C079BAF00EE0DBF /* Project object */;
+}
