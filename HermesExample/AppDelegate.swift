@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  DieselExample
+//  HermesExample
 //
 //  Created by Bezaleel Ashefor on 29/05/2024.
 //
@@ -41,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
         */
-        let container = NSPersistentContainer(name: "DieselExample")
+        let container = NSPersistentContainer(name: "HermesExample")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.

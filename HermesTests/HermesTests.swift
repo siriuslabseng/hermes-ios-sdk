@@ -1,14 +1,14 @@
 //
-//  DieselTests.swift
-//  DieselTests
+//  HermesTests.swift
+//  HermesTests
 //
 //  Created by Bezaleel Ashefor on 29/05/2024.
 //
 
 import XCTest
-@testable import Diesel
+@testable import Hermes
 
-final class DieselTests: XCTestCase {
+final class HermesTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

@@ -1,6 +1,6 @@
 //
 //  SceneDelegate.swift
-//  DieselExample
+//  HermesExample
 //
 //  Created by Bezaleel Ashefor on 29/05/2024.
 //
