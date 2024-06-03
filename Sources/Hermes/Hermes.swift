@@ -25,7 +25,7 @@ public struct Hermes{
     }
     
     
-    public static func configure(with publicKey: String, with widgetSlug: String) {
+    public static func configure(publicKey: String, widgetSlug: String) {
         Hermes.publicKey = publicKey
         Hermes.widgetSlug = widgetSlug
     }
