@@ -5,11 +5,19 @@ import PackageDescription
 
 let package = Package(
     name: "Hermes",
+    platforms: [
+        .iOS(.v15)
+    ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
             name: "Hermes",
             targets: ["Hermes"]),
+    ],
+    dependencies: [
+            // Dependencies declare other packages that this package depends on.
+        .package(url: "https://github.com/gonzalezreal/swift-markdown-ui",
+                        .upToNextMajor(from: "2.3.0"))
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
