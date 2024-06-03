@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MarkdownUI
 
 struct SingleChangelogView: View {
     @Binding var changelog : Changelog

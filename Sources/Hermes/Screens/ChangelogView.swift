@@ -57,7 +57,6 @@ struct ChangelogView: View {
                         }
                     }.padding([.horizontal], 18)
                 }
-                //Spacer()
             }
         }.background(Color(.systemGray5).ignoresSafeArea()).onAppear{
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
