@@ -15,7 +15,7 @@ let package = Package(
             targets: ["Hermes"]),
     ],
     dependencies: [
-            // Dependencies declare other packages that this package depends on.
+        // Dependencies declare other packages that this package depends on.
         .package(url: "https://github.com/gonzalezreal/swift-markdown-ui",
                         .upToNextMajor(from: "2.3.0"))
     ],

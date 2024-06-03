@@ -33,8 +33,7 @@ struct ChangelogView: View {
                 Spacer().frame(height: 2)
                 HStack(spacing: 0){
                     Text("Powered by ").font(.custom(FontsManager.fontRegular, size: 12))
-                    Image("logo", bundle: <#T##Bundle?#>).resizable().scaledToFit().frame(width: 20).padding(.top, 3)
-                    Image("logo", bundle: <#T##Bundle?#>).resizable().scaledToFit().frame(width: 20).padding(.top, 3)
+                    Image("logo", bundle: Bundle.module).resizable().scaledToFit().frame(width: 20).padding(.top, 3)
                     Text(" Hermes").font(.custom(FontsManager.fontRegular, size: 12))
                     Spacer()
                 }.onTapGesture {
