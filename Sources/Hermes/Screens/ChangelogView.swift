@@ -18,16 +18,6 @@ struct ChangelogView: View {
     var changeViewModel = ChangelogViewModel()
     @State var changelog = [Changelog]()
     
-    init(viewObserver: ViewObserver, slug_id: String, public_key: String) {
-        self.viewObserver = viewObserver
-        
-        self.loading = true
-        self.showNoKeys = false
-        self.slug_id = slug_id
-        self.public_key = public_key
-        self.changeViewModel = ChangelogViewModel()
-        self.changelog = [Changelog]()
-    }
     
     var body: some View {
         VStack(spacing: 0){
