@@ -17,6 +17,7 @@ struct ChangelogView: View {
     @State var public_key : String
     var changeViewModel = ChangelogViewModel()
     @State var changelog = [Changelog]()
+    var url = "https://www.tryhermes.app"
     
     
     var body: some View {
@@ -38,7 +39,9 @@ struct ChangelogView: View {
                     Text(" Hermes").font(.custom(FontsManager.fontRegular, size: 12))
                     Spacer()
                 }.onTapGesture {
-                    
+                    if let url = URL(string: url) {
+                        UIApplication.shared.open(url)
+                    }
                 }
             }.padding([.horizontal], 18).padding([.top], 18).padding([.bottom], 16).background(Color(UIColor.systemBackground).ignoresSafeArea())
             if (showNoKeys){
