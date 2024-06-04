@@ -35,7 +35,6 @@ class ChangelogViewModel {
             do {
                 // Parse the JSON data
                 let changelogResult = try JSONDecoder().decode(ChangelogResult.self, from: data)
-                //print(changelogResult)
                 completion(.success(changelogResult))
             } catch {
                 completion(.failure(error))

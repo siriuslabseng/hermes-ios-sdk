@@ -12,11 +12,22 @@ struct ChangelogView: View {
     @ObservedObject var viewObserver : ViewObserver
     @Environment(\.presentationMode) var presentationMode
     @State var loading = true
+    @State var showNoKeys = false
     @State var slug_id : String
     @State var public_key : String
     var changeViewModel = ChangelogViewModel()
     @State var changelog = [Changelog]()
     
+    init(viewObserver: ViewObserver, slug_id: String, public_key: String) {
+        self.viewObserver = viewObserver
+        
+        self.loading = true
+        self.showNoKeys = false
+        self.slug_id = slug_id
+        self.public_key = public_key
+        self.changeViewModel = ChangelogViewModel()
+        self.changelog = [Changelog]()
+    }
     
     var body: some View {
         VStack(spacing: 0){
@@ -40,22 +51,28 @@ struct ChangelogView: View {
                     
                 }
             }.padding([.horizontal], 18).padding([.top], 18).padding([.bottom], 16).background(Color(UIColor.systemBackground).ignoresSafeArea())
-            if (loading){
+            if (showNoKeys){
                 Spacer()
-                VStack{
-                    ProgressView().progressViewStyle(CircularProgressViewStyle(tint: Color.primary))
-                        .frame(width: 20, height: 20)
-                        .scaleEffect(1.0, anchor: .center)
-                }
+                Text(" You need to configure your Hermes Public Key\n and Widget Slug Id").font(.custom(FontsManager.fontRegular, size: 16)).multilineTextAlignment(.center)
                 Spacer()
             } else {
-                ScrollView(showsIndicators: false){
-                    Spacer().frame(height: 20)
-                    LazyVStack(alignment: .center, spacing: 14){
-                        ForEach($changelog, id: \.id) { singlechangelog in
-                            SingleChangelogView(changelog: singlechangelog)
-                        }
-                    }.padding([.horizontal], 18)
+                if (loading){
+                    Spacer()
+                    VStack{
+                        ProgressView().progressViewStyle(CircularProgressViewStyle(tint: Color.primary))
+                            .frame(width: 20, height: 20)
+                            .scaleEffect(1.0, anchor: .center)
+                    }
+                    Spacer()
+                } else {
+                    ScrollView(showsIndicators: false){
+                        Spacer().frame(height: 20)
+                        LazyVStack(alignment: .center, spacing: 14){
+                            ForEach($changelog, id: \.id) { singlechangelog in
+                                SingleChangelogView(changelog: singlechangelog)
+                            }
+                        }.padding([.horizontal], 18)
+                    }
                 }
             }
         }.background(Color(.systemGray5).ignoresSafeArea()).onAppear{
@@ -67,19 +84,24 @@ struct ChangelogView: View {
 
     
     func fetchChangelog(){
-        loading = true
-        changeViewModel.fetchStuff(slug_id: slug_id, public_key: public_key, completion: { result in
-            switch result {
-            case .success(let result):
-                DispatchQueue.main.async {
-                    //viewObserver.changelogResult = result
-                    self.changelog = result.data.changelogs
-                    loading = false
+        if (public_key.isEmpty || slug_id.isEmpty){
+            loading = false
+            showNoKeys = true
+        } else {
+            loading = true
+            changeViewModel.fetchStuff(slug_id: slug_id, public_key: public_key, completion: { result in
+                switch result {
+                case .success(let result):
+                    DispatchQueue.main.async {
+                        //viewObserver.changelogResult = result
+                        self.changelog = result.data.changelogs
+                        loading = false
+                    }
+                case .failure(let error):
+                    print("Request failed with error: \(error)")
                 }
-            case .failure(let error):
-                print("Request failed with error: \(error)")
-            }
-        })
+            })
+        }
     }
 }
 

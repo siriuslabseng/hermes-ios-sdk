@@ -18,6 +18,10 @@ public struct Hermes{
     static var widgetSlug = "my-fancy-widget-key"
     
     init() {
+        
+    }
+    
+    private func registerAllFonts(){
         try! fontsManager.registerFont(named: FontsManager.fontRegular)
         try! fontsManager.registerFont(named: FontsManager.fontBold)
         try! fontsManager.registerFont(named: FontsManager.fontBlack)
