@@ -17,11 +17,11 @@ public struct Hermes{
     static var publicKey = "my-fancy-public-key"
     static var widgetSlug = "my-fancy-widget-key"
     
-    init() {
-        
-    }
+//    init() {
+//        registerAllFonts()
+//    }
     
-    private func registerAllFonts(){
+    private static func registerAllFonts(){
         try! fontsManager.registerFont(named: FontsManager.fontRegular)
         try! fontsManager.registerFont(named: FontsManager.fontBold)
         try! fontsManager.registerFont(named: FontsManager.fontBlack)
@@ -32,6 +32,7 @@ public struct Hermes{
     public static func configure(publicKey: String, widgetSlug: String) {
         Hermes.publicKey = publicKey
         Hermes.widgetSlug = widgetSlug
+        registerAllFonts()
     }
     
     /// (SwiftUI) The Changelog view.
