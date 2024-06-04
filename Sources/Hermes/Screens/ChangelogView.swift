@@ -20,7 +20,7 @@ struct ChangelogView: View {
     
     init(viewObserver: ViewObserver, slug_id: String, public_key: String) {
         self.viewObserver = viewObserver
-        
+        Hermes.shared.configure(publicKey: "", widgetSlug: "")
         self.loading = true
         self.showNoKeys = false
         self.slug_id = slug_id

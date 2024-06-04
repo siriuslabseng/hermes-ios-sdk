@@ -11,13 +11,13 @@ import UIKit
 
 import SwiftUI
 
-public struct Hermes{
+public class Hermes{
     
     let fontsManager = FontsManager()
     static var publicKey = "my-fancy-public-key"
     static var widgetSlug = "my-fancy-widget-key"
     
-    static let shared = Hermes()
+    public static let shared = Hermes()
     
     private init() {
         registerAllFonts()
