@@ -20,10 +20,10 @@ public class Hermes{
     public static let shared = Hermes()
     
     private init() {
-        registerAllFonts()
+        //registerAllFonts()
     }
     
-    private func registerAllFonts(){
+    func registerAllFonts(){
         try! fontsManager.registerFont(named: FontsManager.fontRegular)
         try! fontsManager.registerFont(named: FontsManager.fontBold)
         try! fontsManager.registerFont(named: FontsManager.fontBlack)
