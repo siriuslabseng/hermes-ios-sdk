@@ -46,7 +46,7 @@ struct ChangelogView: View {
             }.padding([.horizontal], 18).padding([.top], 18).padding([.bottom], 16).background(Color(UIColor.systemBackground).ignoresSafeArea())
             if (showNoKeys){
                 Spacer()
-                Text(" You need to configure your Hermes Public Key\n and Widget Slug Id").font(.custom(FontsManager.fontRegular, size: 16)).multilineTextAlignment(.center)
+                Text("You need to configure your Hermes Public Key\n and Widget Slug Id").font(.custom(FontsManager.fontRegular, size: 16)).multilineTextAlignment(.center)
                 Spacer()
             } else {
                 if (loading){
@@ -58,13 +58,19 @@ struct ChangelogView: View {
                     }
                     Spacer()
                 } else {
-                    ScrollView(showsIndicators: false){
-                        Spacer().frame(height: 20)
-                        LazyVStack(alignment: .center, spacing: 14){
-                            ForEach($changelog, id: \.id) { singlechangelog in
-                                SingleChangelogView(changelog: singlechangelog)
-                            }
-                        }.padding([.horizontal], 18)
+                    if (changelog.isEmpty) {
+                        Spacer()
+                        Text("No changelog available").font(.custom(FontsManager.fontRegular, size: 16)).multilineTextAlignment(.center)
+                        Spacer()
+                    } else {
+                        ScrollView(showsIndicators: false){
+                            Spacer().frame(height: 20)
+                            LazyVStack(alignment: .center, spacing: 14){
+                                ForEach($changelog, id: \.id) { singlechangelog in
+                                    SingleChangelogView(changelog: singlechangelog)
+                                }
+                            }.padding([.horizontal], 18)
+                        }
                     }
                 }
             }
