@@ -45,9 +45,16 @@ struct ChangelogView: View {
                 }
             }.padding([.horizontal], 18).padding([.top], 18).padding([.bottom], 16).background(Color(UIColor.systemBackground).ignoresSafeArea())
             if (showNoKeys){
-                Spacer()
-                Text(" You need to configure your Hermes Public Key\n and Widget Slug Id").font(.custom(FontsManager.fontRegular, size: 16)).multilineTextAlignment(.center)
-                Spacer()
+                VStack(spacing: 15){
+                    Spacer()
+                    
+                    Text("You need to configure your Hermes Public Key\n and Widget Slug Id")
+                        .font(.custom(FontsManager.fontRegular, size: 16))
+                        .multilineTextAlignment(.center)
+                        .lineSpacing(3)
+                       
+                    Spacer()
+                }
             } else {
                 if (loading){
                     Spacer()
@@ -58,13 +65,28 @@ struct ChangelogView: View {
                     }
                     Spacer()
                 } else {
-                    ScrollView(showsIndicators: false){
-                        Spacer().frame(height: 20)
-                        LazyVStack(alignment: .center, spacing: 14){
-                            ForEach($changelog, id: \.id) { singlechangelog in
-                                SingleChangelogView(changelog: singlechangelog)
+                    if (changelog.isEmpty) {
+                        VStack(spacing: 15){
+                            Spacer()
+                            ZStack{
+                                Image("emptybg", bundle: Bundle.module).resizable().scaledToFit().frame(height: 300)
+                                Image("empty", bundle: Bundle.module).resizable().scaledToFit().frame(width: 240)
                             }
-                        }.padding([.horizontal], 18)
+                            Text("No changelog available").font(.custom(FontsManager.fontRegular, size: 16))
+                                .multilineTextAlignment(.center)
+                                .lineSpacing(3)
+                                .offset(y: -80)
+                            Spacer()
+                        }
+                    } else {
+                        ScrollView(showsIndicators: false){
+                            Spacer().frame(height: 20)
+                            LazyVStack(alignment: .center, spacing: 14){
+                                ForEach($changelog, id: \.id) { singlechangelog in
+                                    SingleChangelogView(changelog: singlechangelog)
+                                }
+                            }.padding([.horizontal], 18)
+                        }
                     }
                 }
             }
