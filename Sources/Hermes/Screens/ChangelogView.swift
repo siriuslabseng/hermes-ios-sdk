@@ -47,6 +47,10 @@ struct ChangelogView: View {
             if (showNoKeys){
                 VStack(spacing: 15){
                     Spacer()
+                    ZStack{
+                        Image("emptybg", bundle: Bundle.module).resizable().scaledToFit().frame(height: 280)
+                        Image("empty", bundle: Bundle.module).resizable().scaledToFit().frame(width: 190).offset(y: 3)
+                    }
                     Text("You need to configure your Hermes Public Key\n and Widget Slug Id")
                         .font(.custom(FontsManager.fontRegular, size: 16))
                         .multilineTextAlignment(.center)
