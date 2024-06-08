@@ -3,6 +3,16 @@
     {
       "filename" : "empty.pdf",
       "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "empty_black.pdf",
+      "idiom" : "universal"
     }
   ],
   "info" : {
