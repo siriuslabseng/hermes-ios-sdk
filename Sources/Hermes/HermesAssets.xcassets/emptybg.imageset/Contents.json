@@ -1,7 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "emptybg.png",
+      "filename" : "emptybg.pdf",
+      "idiom" : "universal"
+    },
+    {
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
+      "filename" : "emptybg_black.pdf",
       "idiom" : "universal"
     }
   ],

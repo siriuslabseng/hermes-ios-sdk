@@ -47,14 +47,12 @@ struct ChangelogView: View {
             if (showNoKeys){
                 VStack(spacing: 15){
                     Spacer()
-                    
                     Text("You need to configure your Hermes Public Key\n and Widget Slug Id")
                         .font(.custom(FontsManager.fontRegular, size: 16))
                         .multilineTextAlignment(.center)
                         .lineSpacing(3)
-                       
                     Spacer()
-                }
+                }.clipped()
             } else {
                 if (loading){
                     Spacer()
@@ -69,13 +67,13 @@ struct ChangelogView: View {
                         VStack(spacing: 15){
                             Spacer()
                             ZStack{
-                                Image("emptybg", bundle: Bundle.module).resizable().scaledToFit().frame(height: 300)
-                                Image("empty", bundle: Bundle.module).resizable().scaledToFit().frame(width: 240)
+                                Image("emptybg", bundle: Bundle.module).resizable().scaledToFit().frame(height: 280)
+                                Image("empty", bundle: Bundle.module).resizable().scaledToFit().frame(width: 190).offset(y: 3)
                             }
                             Text("No changelog available").font(.custom(FontsManager.fontRegular, size: 16))
                                 .multilineTextAlignment(.center)
                                 .lineSpacing(3)
-                                .offset(y: -80)
+                                .offset(y: -85)
                             Spacer()
                         }
                     } else {
