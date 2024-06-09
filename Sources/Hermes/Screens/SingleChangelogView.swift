@@ -13,6 +13,7 @@ struct SingleChangelogView: View {
     var verticalPadding : CGFloat = 7
     var horizontalPadding : CGFloat = 8
     var cornerRadius : CGFloat = 20
+    @State var disableReactions = false
     
     var body: some View {
         VStack(alignment: .leading){
@@ -25,21 +26,29 @@ struct SingleChangelogView: View {
             //MDText(markdown: changelog.content).font(.custom(FontsManager.fontRegular, size: 16))
             Spacer().frame(height:15)
             HStack(spacing: 0){
-                Button(action: {}){
+                Button(action: {
+                    disableReactions.toggle()
+                }){
                     Text("❤️")
                     Text("\(changelog.heartReaction)")
                 }.padding(.vertical, verticalPadding)
                     .padding(.horizontal, horizontalPadding)
                     .background(Color(.systemGray4))
                     .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
+                    .disabled(disableReactions)
+                    .opacity(disableReactions ? 0.6 : 1.0)
                 Spacer()
-                Button(action: {}){
+                Button(action: {
+                    
+                }){
                     Text("😀")
                     Text("\(changelog.smileReaction)")
                 }.padding(.vertical, verticalPadding)
                     .padding(.horizontal, horizontalPadding)
                     .background(Color(.systemGray4))
                     .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
+                    .disabled(disableReactions)
+                    .opacity(disableReactions ? 0.6 : 1.0)
                 Spacer()
                 Button(action: {}){
                     Text("🔥")
@@ -48,6 +57,8 @@ struct SingleChangelogView: View {
                     .padding(.horizontal, horizontalPadding)
                     .background(Color(.systemGray4))
                     .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
+                    .disabled(disableReactions)
+                    .opacity(disableReactions ? 0.6 : 1.0)
                 Spacer()
                 Button(action: {}){
                     Text("👍🏼")
@@ -56,6 +67,8 @@ struct SingleChangelogView: View {
                     .padding(.horizontal, horizontalPadding)
                     .background(Color(.systemGray4))
                     .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
+                    .disabled(disableReactions)
+                    .opacity(disableReactions ? 0.6 : 1.0)
                 Spacer()
                 Button(action: {}){
                     Text("👎🏼")
@@ -64,6 +77,8 @@ struct SingleChangelogView: View {
                     .padding(.horizontal, horizontalPadding)
                     .background(Color(.systemGray4))
                     .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
+                    .disabled(disableReactions)
+                    .opacity(disableReactions ? 0.6 : 1.0)
                 Spacer()
                 Button(action: {}){
                     Text("😢")
@@ -72,7 +87,9 @@ struct SingleChangelogView: View {
                     .padding(.horizontal, horizontalPadding)
                     .background(Color(.systemGray4))
                     .clipShape(RoundedRectangle(cornerRadius: cornerRadius))
-            }.padding(.horizontal, 5).font(.custom(FontsManager.fontRegular, size: 14))
+                    .disabled(disableReactions)
+                    .opacity(disableReactions ? 0.6 : 1.0)
+            }.font(.custom(FontsManager.fontRegular, size: 14))
             Spacer().frame(height: 20)
         }.frame(minWidth: 0, maxWidth: .infinity, alignment: .leading).font(.custom(FontsManager.fontRegular, size: 16))
     }
