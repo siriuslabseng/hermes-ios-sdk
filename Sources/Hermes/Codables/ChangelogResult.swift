@@ -26,7 +26,7 @@ struct Changelog: Codable {
     let app, company: String
     let author: Author
     let createdAt, updatedAt: String
-    let fireReaction, heartReaction, smileReaction, sobReaction, thumbsDownReaction, thumbsUpReaction: Int
+    var fireReaction, heartReaction, smileReaction, sobReaction, thumbsDownReaction, thumbsUpReaction: Int
     let v: Int
 
     enum CodingKeys: String, CodingKey {

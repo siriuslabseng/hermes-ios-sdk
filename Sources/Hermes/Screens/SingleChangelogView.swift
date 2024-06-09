@@ -21,13 +21,11 @@ struct SingleChangelogView: View {
             Spacer().frame(height: 1)
             Text(getStringFromDate(thisDate: changelog.updatedAt)).font(.custom(FontsManager.fontRegular, size: 14)).opacity(0.8)
             Spacer().frame(height: 15)
-            //let content = MarkdownContent(changelog.content)
             Markdown(changelog.content).font(.custom(FontsManager.fontRegular, size: 16))
-            //MDText(markdown: changelog.content).font(.custom(FontsManager.fontRegular, size: 16))
             Spacer().frame(height:15)
             HStack(spacing: 0){
                 Button(action: {
-                    disableReactions.toggle()
+                    toggleReaction(reaction: .HEART)
                 }){
                     Text("❤️")
                     Text("\(changelog.heartReaction)")
@@ -39,7 +37,7 @@ struct SingleChangelogView: View {
                     .opacity(disableReactions ? 0.6 : 1.0)
                 Spacer()
                 Button(action: {
-                    
+                    toggleReaction(reaction: .SMILE)
                 }){
                     Text("😀")
                     Text("\(changelog.smileReaction)")
@@ -50,7 +48,9 @@ struct SingleChangelogView: View {
                     .disabled(disableReactions)
                     .opacity(disableReactions ? 0.6 : 1.0)
                 Spacer()
-                Button(action: {}){
+                Button(action: {
+                    toggleReaction(reaction: .FIRE)
+                }){
                     Text("🔥")
                     Text("\(changelog.fireReaction)")
                 }.padding(.vertical, verticalPadding)
@@ -60,7 +60,9 @@ struct SingleChangelogView: View {
                     .disabled(disableReactions)
                     .opacity(disableReactions ? 0.6 : 1.0)
                 Spacer()
-                Button(action: {}){
+                Button(action: {
+                    toggleReaction(reaction: .THUMBSUP)
+                }){
                     Text("👍🏼")
                     Text("\(changelog.thumbsUpReaction)")
                 }.padding(.vertical, verticalPadding)
@@ -70,7 +72,9 @@ struct SingleChangelogView: View {
                     .disabled(disableReactions)
                     .opacity(disableReactions ? 0.6 : 1.0)
                 Spacer()
-                Button(action: {}){
+                Button(action: {
+                    toggleReaction(reaction: .THUMBSDOWN)
+                }){
                     Text("👎🏼")
                     Text("\(changelog.thumbsDownReaction)")
                 }.padding(.vertical, verticalPadding)
@@ -80,7 +84,9 @@ struct SingleChangelogView: View {
                     .disabled(disableReactions)
                     .opacity(disableReactions ? 0.6 : 1.0)
                 Spacer()
-                Button(action: {}){
+                Button(action: {
+                    toggleReaction(reaction: .SOB)
+                }){
                     Text("😢")
                     Text("\(changelog.sobReaction)")
                 }.padding(.vertical, verticalPadding)
@@ -106,9 +112,17 @@ struct SingleChangelogView: View {
         dateFormatterPrint.dateFormat = "EEEE, dd MMMM YY"
         
         print("Gotten Date \(thisDate)")
-        print("Formated Date \(date)")
+        print("Formatted Date \(date)")
         print("")
         return dateFormatterPrint.string(from: date ?? Date())
+    }
+    
+    private func toggleReaction(reaction: Reaction){
+        disableReactions.toggle()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0){
+            disableReactions.toggle()
+            changelog.heartReaction += 1
+        }
     }
 }
 
