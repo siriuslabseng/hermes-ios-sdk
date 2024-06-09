@@ -47,10 +47,6 @@ struct ChangelogView: View {
             if (showNoKeys){
                 VStack(spacing: 15){
                     Spacer()
-                    ZStack{
-                        Image("emptybg", bundle: Bundle.module).resizable().scaledToFit().frame(height: 280)
-                        Image("empty", bundle: Bundle.module).resizable().scaledToFit().frame(width: 190).offset(y: 3)
-                    }
                     Text("You need to configure your Hermes Public Key\n and Widget Slug Id")
                         .font(.custom(FontsManager.fontRegular, size: 16))
                         .multilineTextAlignment(.center)
@@ -85,7 +81,8 @@ struct ChangelogView: View {
                             Spacer().frame(height: 20)
                             LazyVStack(alignment: .center, spacing: 14){
                                 ForEach($changelog, id: \.id) { singlechangelog in
-                                    SingleChangelogView(changelog: singlechangelog)
+                                    SingleChangelogView(changelog: singlechangelog,
+                                                        previousChangelog: singlechangelog.wrappedValue)
                                 }
                             }.padding([.horizontal], 18)
                         }
@@ -110,7 +107,6 @@ struct ChangelogView: View {
                 switch result {
                 case .success(let result):
                     DispatchQueue.main.async {
-                        //viewObserver.changelogResult = result
                         self.changelog = result.data.changelogs
                         loading = false
                     }
