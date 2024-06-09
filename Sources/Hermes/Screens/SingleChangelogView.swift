@@ -119,9 +119,22 @@ struct SingleChangelogView: View {
     
     private func toggleReaction(reaction: Reaction){
         disableReactions.toggle()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.5){
             disableReactions.toggle()
-            changelog.heartReaction += 1
+            switch (reaction) {
+            case .HEART:
+                changelog.heartReaction += 1
+            case .SMILE:
+                changelog.smileReaction += 1
+            case .FIRE:
+                changelog.fireReaction += 1
+            case .THUMBSUP:
+                changelog.thumbsUpReaction += 1
+            case .THUMBSDOWN:
+                changelog.thumbsDownReaction += 1
+            case .SOB:
+                changelog.sobReaction += 1
+            }
         }
     }
 }
