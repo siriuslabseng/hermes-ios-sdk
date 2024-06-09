@@ -10,6 +10,7 @@ import MarkdownUI
 
 struct SingleChangelogView: View {
     @Binding var changelog : Changelog
+    @State var previousChangelog : Changelog
     var verticalPadding : CGFloat = 7
     var horizontalPadding : CGFloat = 8
     var cornerRadius : CGFloat = 20
@@ -119,31 +120,69 @@ struct SingleChangelogView: View {
     
     private func toggleReaction(reaction: Reaction){
         disableReactions.toggle()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5){
             disableReactions.toggle()
-            changelog.heartReaction += 1
+            switch (reaction) {
+            case .HEART:
+                if (changelog.heartReaction == previousChangelog.heartReaction){
+                    changelog.heartReaction += 1
+                } else {
+                    changelog.heartReaction -= 1
+                }
+            case .SMILE:
+                if (changelog.smileReaction == previousChangelog.smileReaction){
+                    changelog.smileReaction += 1
+                } else {
+                    changelog.smileReaction -= 1
+                }
+            case .FIRE:
+                if (changelog.fireReaction == previousChangelog.fireReaction){
+                    changelog.fireReaction += 1
+                } else {
+                    changelog.fireReaction -= 1
+                }
+            case .THUMBSUP:
+                if (changelog.thumbsUpReaction == previousChangelog.thumbsUpReaction){
+                    changelog.thumbsUpReaction += 1
+                } else {
+                    changelog.thumbsUpReaction -= 1
+                }
+            case .THUMBSDOWN:
+                if (changelog.thumbsDownReaction == previousChangelog.thumbsDownReaction){
+                    changelog.thumbsDownReaction += 1
+                } else {
+                    changelog.thumbsDownReaction -= 1
+                }
+            case .SOB:
+                if (changelog.sobReaction == previousChangelog.sobReaction){
+                    changelog.sobReaction += 1
+                } else {
+                    changelog.sobReaction -= 1
+                }
+            }
         }
     }
 }
 
 #Preview {
-    SingleChangelogView(changelog: 
-            .constant(Changelog(id: "",
-                                status: "",
-                                title: "",
-                                content: "",
-                                app: "",
-                                company: "",
-                                author: Author(id: "",
-                                               avartar: "Sinestro",
-                                               name: "Sinestro"),
-                                createdAt: "",
-                                updatedAt: "",
-                                fireReaction: 0,
-                                heartReaction: 0,
-                                smileReaction: 0,
-                                sobReaction: 0,
-                                thumbsDownReaction: 0,
-                                thumbsUpReaction: 0,
-                                v: 0)))
+    @State var changelog = Changelog(id: "",
+                              status: "",
+                              title: "Litur 5 - v48",
+                              content: "",
+                              app: "Litur",
+                              company: "",
+                              author: Author(id: "",
+                                             avartar: "Sinestro",
+                                             name: "Sinestro"),
+                              createdAt: "",
+                              updatedAt: "",
+                              fireReaction: 0,
+                              heartReaction: 0,
+                              smileReaction: 0,
+                              sobReaction: 0,
+                              thumbsDownReaction: 0,
+                              thumbsUpReaction: 0,
+                              v: 0)
+    return SingleChangelogView(changelog:
+            $changelog, previousChangelog: changelog)
 }
