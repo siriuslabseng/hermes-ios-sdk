@@ -13,8 +13,10 @@ struct SingleChangelogView: View {
     @State var previousChangelog : Changelog
     var verticalPadding : CGFloat = 7
     var horizontalPadding : CGFloat = 8
+    var spacing : CGFloat = 5
     var cornerRadius : CGFloat = 20
     @State var disableReactions = false
+    
     
     var body: some View {
         VStack(alignment: .leading){
@@ -28,8 +30,10 @@ struct SingleChangelogView: View {
                 Button(action: {
                     toggleReaction(reaction: .HEART)
                 }){
-                    Text("❤️")
-                    Text("\(changelog.heartReaction)")
+                    HStack(spacing: spacing){
+                        Text("❤️")
+                        Text("\(changelog.heartReaction)")
+                    }
                 }.padding(.vertical, verticalPadding)
                     .padding(.horizontal, horizontalPadding)
                     .background(Color(.systemGray4))
@@ -40,8 +44,11 @@ struct SingleChangelogView: View {
                 Button(action: {
                     toggleReaction(reaction: .SMILE)
                 }){
-                    Text("😀")
-                    Text("\(changelog.smileReaction)")
+                    HStack(spacing: spacing){
+                        Text("😀")
+                        Text("\(changelog.smileReaction)")
+                    }
+                    
                 }.padding(.vertical, verticalPadding)
                     .padding(.horizontal, horizontalPadding)
                     .background(Color(.systemGray4))
@@ -52,8 +59,10 @@ struct SingleChangelogView: View {
                 Button(action: {
                     toggleReaction(reaction: .FIRE)
                 }){
-                    Text("🔥")
-                    Text("\(changelog.fireReaction)")
+                    HStack(spacing: spacing){
+                        Text("🔥")
+                        Text("\(changelog.fireReaction)")
+                    }
                 }.padding(.vertical, verticalPadding)
                     .padding(.horizontal, horizontalPadding)
                     .background(Color(.systemGray4))
@@ -64,8 +73,9 @@ struct SingleChangelogView: View {
                 Button(action: {
                     toggleReaction(reaction: .THUMBSUP)
                 }){
-                    Text("👍🏼")
-                    Text("\(changelog.thumbsUpReaction)")
+                    HStack(spacing: spacing){
+                        Text("👍🏼")
+                        Text("\(changelog.thumbsUpReaction)")}
                 }.padding(.vertical, verticalPadding)
                     .padding(.horizontal, horizontalPadding)
                     .background(Color(.systemGray4))
@@ -76,8 +86,11 @@ struct SingleChangelogView: View {
                 Button(action: {
                     toggleReaction(reaction: .THUMBSDOWN)
                 }){
-                    Text("👎🏼")
-                    Text("\(changelog.thumbsDownReaction)")
+                    HStack(spacing: spacing){
+                        Text("👎🏼")
+                        Text("\(changelog.thumbsDownReaction)")
+                    }
+                    
                 }.padding(.vertical, verticalPadding)
                     .padding(.horizontal, horizontalPadding)
                     .background(Color(.systemGray4))
@@ -88,8 +101,11 @@ struct SingleChangelogView: View {
                 Button(action: {
                     toggleReaction(reaction: .SOB)
                 }){
-                    Text("😢")
-                    Text("\(changelog.sobReaction)")
+                    HStack(spacing: spacing){
+                        Text("😢")
+                        Text("\(changelog.sobReaction)")
+                    }
+                    
                 }.padding(.vertical, verticalPadding)
                     .padding(.horizontal, horizontalPadding)
                     .background(Color(.systemGray4))
@@ -166,23 +182,23 @@ struct SingleChangelogView: View {
 
 #Preview {
     @State var changelog = Changelog(id: "",
-                              status: "",
-                              title: "Litur 5 - v48",
-                              content: "",
-                              app: "Litur",
-                              company: "",
-                              author: Author(id: "",
-                                             avartar: "Sinestro",
-                                             name: "Sinestro"),
-                              createdAt: "",
-                              updatedAt: "",
-                              fireReaction: 0,
-                              heartReaction: 0,
-                              smileReaction: 0,
-                              sobReaction: 0,
-                              thumbsDownReaction: 0,
-                              thumbsUpReaction: 0,
-                              v: 0)
+                                     status: "",
+                                     title: "Litur 5 - v48",
+                                     content: "",
+                                     app: "Litur",
+                                     company: "",
+                                     author: Author(id: "",
+                                                    avartar: "Sinestro",
+                                                    name: "Sinestro"),
+                                     createdAt: "",
+                                     updatedAt: "",
+                                     fireReaction: 0,
+                                     heartReaction: 0,
+                                     smileReaction: 0,
+                                     sobReaction: 0,
+                                     thumbsDownReaction: 0,
+                                     thumbsUpReaction: 0,
+                                     v: 0)
     return SingleChangelogView(changelog:
-            $changelog, previousChangelog: changelog)
+                                $changelog, previousChangelog: changelog)
 }
