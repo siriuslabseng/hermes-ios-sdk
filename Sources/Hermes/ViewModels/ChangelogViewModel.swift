@@ -54,7 +54,7 @@ class ChangelogViewModel {
         ]
         
         
-        let jsonReaction = "{\"reaction\": \"\(reaction)\"}"
+        let jsonReaction = "{\"reaction\": \"\(reaction)\"}".data(using: .utf8)
         print(jsonReaction)
         let jsonData = try? JSONSerialization.data(withJSONObject: jsonReaction)
         print(jsonData)
