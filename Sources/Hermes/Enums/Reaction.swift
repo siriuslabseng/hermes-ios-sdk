@@ -8,11 +8,11 @@
 import Foundation
 
 
-public enum Reaction {
-    case HEART
-    case SMILE
-    case FIRE
-    case THUMBSUP
-    case THUMBSDOWN
-    case SOB
+public enum Reaction : String {
+    case HEART = "heartReaction"
+    case SMILE = "smileReaction"
+    case FIRE = "fireReaction"
+    case THUMBSUP = "thumbsUpReaction"
+    case THUMBSDOWN = "thumbsDownReaction"
+    case SOB = "sobReaction"
 }

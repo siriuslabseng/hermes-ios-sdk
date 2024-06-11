@@ -16,6 +16,7 @@ struct SingleChangelogView: View {
     var spacing : CGFloat = 5
     var cornerRadius : CGFloat = 20
     @State var disableReactions = false
+    var changelogViewModel = ChangelogViewModel()
     
     
     var body: some View {
@@ -136,45 +137,76 @@ struct SingleChangelogView: View {
     
     private func toggleReaction(reaction: Reaction){
         disableReactions.toggle()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5){
-            disableReactions.toggle()
-            switch (reaction) {
-            case .HEART:
-                if (changelog.heartReaction == previousChangelog.heartReaction){
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5){
+//
+//        }
+        
+        switch (reaction) {
+        case .HEART:
+            if (changelog.heartReaction == previousChangelog.heartReaction){
+                addReaction(reaction: .HEART, completion: { value in
                     changelog.heartReaction += 1
-                } else {
+                    disableReactions.toggle()
+                })
+            } else {
+                removeReaction(reaction: .HEART, completion: { value in
                     changelog.heartReaction -= 1
-                }
-            case .SMILE:
-                if (changelog.smileReaction == previousChangelog.smileReaction){
-                    changelog.smileReaction += 1
-                } else {
-                    changelog.smileReaction -= 1
-                }
-            case .FIRE:
-                if (changelog.fireReaction == previousChangelog.fireReaction){
-                    changelog.fireReaction += 1
-                } else {
-                    changelog.fireReaction -= 1
-                }
-            case .THUMBSUP:
-                if (changelog.thumbsUpReaction == previousChangelog.thumbsUpReaction){
-                    changelog.thumbsUpReaction += 1
-                } else {
-                    changelog.thumbsUpReaction -= 1
-                }
-            case .THUMBSDOWN:
-                if (changelog.thumbsDownReaction == previousChangelog.thumbsDownReaction){
-                    changelog.thumbsDownReaction += 1
-                } else {
-                    changelog.thumbsDownReaction -= 1
-                }
-            case .SOB:
-                if (changelog.sobReaction == previousChangelog.sobReaction){
-                    changelog.sobReaction += 1
-                } else {
-                    changelog.sobReaction -= 1
-                }
+                    disableReactions.toggle()
+                })
+            }
+        case .SMILE:
+            if (changelog.smileReaction == previousChangelog.smileReaction){
+                changelog.smileReaction += 1
+            } else {
+                changelog.smileReaction -= 1
+            }
+        case .FIRE:
+            if (changelog.fireReaction == previousChangelog.fireReaction){
+                changelog.fireReaction += 1
+            } else {
+                changelog.fireReaction -= 1
+            }
+        case .THUMBSUP:
+            if (changelog.thumbsUpReaction == previousChangelog.thumbsUpReaction){
+                changelog.thumbsUpReaction += 1
+            } else {
+                changelog.thumbsUpReaction -= 1
+            }
+        case .THUMBSDOWN:
+            if (changelog.thumbsDownReaction == previousChangelog.thumbsDownReaction){
+                changelog.thumbsDownReaction += 1
+            } else {
+                changelog.thumbsDownReaction -= 1
+            }
+        case .SOB:
+            if (changelog.sobReaction == previousChangelog.sobReaction){
+                changelog.sobReaction += 1
+            } else {
+                changelog.sobReaction -= 1
+            }
+        }
+        
+    }
+    
+    private func addReaction(reaction: Reaction, completion: @escaping (Bool) -> Void) {
+        changelogViewModel.addReaction(company: changelog.company, app_id: changelog.app, changelog_id: changelog.id, reaction: reaction.rawValue) { result in
+            switch result {
+            case .success(_):
+                completion(true)
+            case .failure(_):
+                completion(false)
+            }
+        }
+    }
+    
+    
+    private func removeReaction(reaction: Reaction, completion: @escaping (Bool) -> Void) {
+        changelogViewModel.removeReaction(company: changelog.company, app_id: changelog.app, changelog_id: changelog.id, reaction: reaction.rawValue) { result in
+            switch result {
+            case .success(_):
+                completion(true)
+            case .failure(_):
+                completion(false)
             }
         }
     }
