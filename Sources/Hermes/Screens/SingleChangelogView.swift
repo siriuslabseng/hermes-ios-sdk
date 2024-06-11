@@ -137,9 +137,6 @@ struct SingleChangelogView: View {
     
     private func toggleReaction(reaction: Reaction){
         disableReactions.toggle()
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5){
-//
-//        }
         
         switch (reaction) {
         case .HEART:
