@@ -156,33 +156,53 @@ struct SingleChangelogView: View {
             }
         case .SMILE:
             if (changelog.smileReaction == previousChangelog.smileReaction){
-                changelog.smileReaction += 1
+                addReaction(reaction: .SMILE, completion: { value in
+                    changelog.smileReaction += 1
+                })
             } else {
-                changelog.smileReaction -= 1
+                removeReaction(reaction: .SMILE, completion: { value in
+                    changelog.smileReaction -= 1
+                })
             }
         case .FIRE:
             if (changelog.fireReaction == previousChangelog.fireReaction){
-                changelog.fireReaction += 1
+                addReaction(reaction: .FIRE, completion: { value in
+                    changelog.fireReaction += 1
+                })
             } else {
-                changelog.fireReaction -= 1
+                removeReaction(reaction: .FIRE, completion: { value in
+                    changelog.fireReaction -= 1
+                })
             }
         case .THUMBSUP:
             if (changelog.thumbsUpReaction == previousChangelog.thumbsUpReaction){
-                changelog.thumbsUpReaction += 1
+                addReaction(reaction: .THUMBSUP, completion: { value in
+                    changelog.thumbsUpReaction += 1
+                })
             } else {
-                changelog.thumbsUpReaction -= 1
+                removeReaction(reaction: .THUMBSUP, completion: { value in
+                    changelog.thumbsUpReaction -= 1
+                })
             }
         case .THUMBSDOWN:
             if (changelog.thumbsDownReaction == previousChangelog.thumbsDownReaction){
-                changelog.thumbsDownReaction += 1
+                addReaction(reaction: .THUMBSDOWN, completion: { value in
+                    changelog.thumbsDownReaction += 1
+                })
             } else {
-                changelog.thumbsDownReaction -= 1
+                removeReaction(reaction: .THUMBSDOWN, completion: { value in
+                    changelog.thumbsDownReaction -= 1
+                })
             }
         case .SOB:
             if (changelog.sobReaction == previousChangelog.sobReaction){
-                changelog.sobReaction += 1
+                addReaction(reaction: .SOB, completion: { value in
+                    changelog.sobReaction += 1
+                })
             } else {
-                changelog.sobReaction -= 1
+                removeReaction(reaction: .SOB, completion: { value in
+                    changelog.sobReaction -= 1
+                })
             }
         }
         

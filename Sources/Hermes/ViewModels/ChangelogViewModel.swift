@@ -55,11 +55,7 @@ class ChangelogViewModel {
         
         
         let jsonReaction = "{\"reaction\": \"\(reaction)\"}".data(using: .utf8)
-        print(jsonReaction)
-//        let jsonData = try? JSONSerialization.data(withJSONObject: jsonReaction)
-//        print(jsonData)
-        print("Ade")
-        request.httpBody = jsonReaction//jsonData
+        request.httpBody = jsonReaction
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {
@@ -88,8 +84,8 @@ class ChangelogViewModel {
             "Content-Type": "application/json"
         ]
         
-        let jsonData = try? JSONSerialization.data(withJSONObject: reaction)
-        request.httpBody = jsonData
+        let jsonReaction = "{\"reaction\": \"\(reaction)\"}".data(using: .utf8)
+        request.httpBody = jsonReaction
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {
