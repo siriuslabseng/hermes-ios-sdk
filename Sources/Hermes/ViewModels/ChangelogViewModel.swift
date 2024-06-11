@@ -54,7 +54,8 @@ class ChangelogViewModel {
         ]
         
         print(reaction)
-        let jsonData = try? JSONSerialization.data(withJSONObject: reaction)
+        let jsonReaction = "{'reaction': '\(reaction)'}"
+        let jsonData = try? JSONSerialization.data(withJSONObject: jsonReaction)
         print(jsonData)
         request.httpBody = jsonData
         
