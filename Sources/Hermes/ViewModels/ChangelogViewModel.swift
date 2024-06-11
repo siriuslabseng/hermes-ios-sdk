@@ -53,7 +53,9 @@ class ChangelogViewModel {
             "Content-Type": "application/json"
         ]
         
+        print(reaction)
         let jsonData = try? JSONSerialization.data(withJSONObject: reaction)
+        print(jsonData)
         request.httpBody = jsonData
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
