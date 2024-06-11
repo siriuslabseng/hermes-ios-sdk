@@ -43,4 +43,64 @@ class ChangelogViewModel {
         
         task.resume()
     }
+    
+    func addReaction(company: String, app_id: String, changelog_id: String, reaction: String, completion: @escaping (Result<Bool, Error>) -> Void){
+        let url = URL(string:  "\(Constants.base_url)/changelog/\(company)/\(app_id)/\(changelog_id)/\(reaction)")!
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "PUT"
+        request.allHTTPHeaderFields = [
+            "Content-Type": "application/json"
+        ]
+        
+        let jsonData = try? JSONSerialization.data(withJSONObject: reaction)
+        request.httpBody = jsonData
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                print(error?.localizedDescription ?? "No data")
+                completion(.failure(error!))
+                return
+            }
+            
+            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+            if let responseJSON = responseJSON as? [String: Any] {
+                print(responseJSON)
+                completion(.success(true))
+            }
+        }
+        
+        task.resume()
+    }
+    
+    
+    func removeReaction(company: String, app_id: String, changelog_id: String, reaction: String, completion: @escaping (Result<Bool, Error>) -> Void){
+        let url = URL(string:  "\(Constants.base_url)/changelog/\(company)/\(app_id)/\(changelog_id)/\(reaction)")!
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "DELETE"
+        request.allHTTPHeaderFields = [
+            "Content-Type": "application/json"
+        ]
+        
+        let jsonData = try? JSONSerialization.data(withJSONObject: reaction)
+        request.httpBody = jsonData
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data, error == nil else {
+                print(error?.localizedDescription ?? "No data")
+                completion(.failure(error!))
+                return
+            }
+            
+            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+            if let responseJSON = responseJSON as? [String: Any] {
+                print(responseJSON)
+                completion(.success(true))
+            }
+        }
+        
+        task.resume()
+    }
+    
 }
