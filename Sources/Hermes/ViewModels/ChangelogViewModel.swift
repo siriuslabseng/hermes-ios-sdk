@@ -45,7 +45,7 @@ class ChangelogViewModel {
     }
     
     func addReaction(company: String, app_id: String, changelog_id: String, reaction: String, completion: @escaping (Result<Bool, Error>) -> Void){
-        let url = URL(string:  "\(Constants.base_url)/changelog/\(company)/\(app_id)/\(changelog_id)/\(reaction)")!
+        let url = URL(string:  "\(Constants.base_url)/changelog/\(company)/\(app_id)/\(changelog_id)/reaction")!
         print(url)
         var request = URLRequest(url: url)
         request.httpMethod = "PUT"
@@ -76,7 +76,7 @@ class ChangelogViewModel {
     
     
     func removeReaction(company: String, app_id: String, changelog_id: String, reaction: String, completion: @escaping (Result<Bool, Error>) -> Void){
-        let url = URL(string:  "\(Constants.base_url)/changelog/\(company)/\(app_id)/\(changelog_id)/\(reaction)")!
+        let url = URL(string: "\(Constants.base_url)/changelog/\(company)/\(app_id)/\(changelog_id)/reaction")!
         print(url)
         var request = URLRequest(url: url)
         request.httpMethod = "DELETE"
