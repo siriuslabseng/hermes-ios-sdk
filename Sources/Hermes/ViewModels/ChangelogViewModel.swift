@@ -53,7 +53,6 @@ class ChangelogViewModel {
             "Content-Type": "application/json"
         ]
         
-        
         let jsonReaction = "{\"reaction\": \"\(reaction)\"}".data(using: .utf8)
         request.httpBody = jsonReaction
         
