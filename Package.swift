@@ -17,7 +17,7 @@ let package = Package(
     dependencies: [
         // Dependencies declare other packages that this package depends on.
         .package(url: "https://github.com/gonzalezreal/swift-markdown-ui",
-                        .upToNextMajor(from: "2.3.0"))
+                        .upToNextMajor(from: "2.4.0"))
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.

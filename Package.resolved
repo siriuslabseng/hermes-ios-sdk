@@ -1,5 +1,5 @@
 {
-  "originHash" : "b6b188bf76875cab8fe5d65415123590ee77a5eadf0829120d9d8f23cbfaef23",
+  "originHash" : "3d4eba10ec339b275d360e3f08f6256183d35546845a81ef00d3d405a54761ab",
   "pins" : [
     {
       "identity" : "networkimage",
@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/gonzalezreal/swift-markdown-ui",
       "state" : {
-        "revision" : "ae799d015a5374708f7b4c85f3294c05f2a564e2",
-        "version" : "2.3.0"
+        "revision" : "55441810c0f678c78ed7e2ebd46dde89228e02fc",
+        "version" : "2.4.0"
       }
     }
   ],
